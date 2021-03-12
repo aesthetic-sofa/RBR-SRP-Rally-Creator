@@ -1,0 +1,36 @@
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.exe.config
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.exe
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.pdb
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csprojAssemblyReference.cache
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP_Rallies_Manager.Properties.Resources.resources
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.GenerateResource.cache
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.CoreCompileInputs.cache
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.exe
+c:\users\lorenzo\source\repos\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.pdb
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csprojAssemblyReference.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP_Rallies_Manager.Properties.Resources.resources
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.GenerateResource.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.CoreCompileInputs.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.exe
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.pdb
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.exe.config
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.exe
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.pdb
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.exe.config
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.exe
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.pdb
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csprojAssemblyReference.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\obj\Debug\SRP_Rallies_Manager.Properties.Resources.resources
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.GenerateResource.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.CoreCompileInputs.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.exe
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Files-Creator\SRP Rallies Manager - Alternative classes\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.pdb
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.exe.config
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.exe
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\bin\Debug\SRP Rallies Manager.pdb
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csprojAssemblyReference.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP_Rallies_Manager.Properties.Resources.resources
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.GenerateResource.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.CoreCompileInputs.cache
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.exe
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.pdb
