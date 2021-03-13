@@ -23,12 +23,12 @@ namespace SRP_Rallies_Manager
 
             // TEST START
             SRP srp = new SRP();
-            int stagenumber = srp.CountStages("Finland.srp");
+            int stagenumber = srp.CountStages("France.srp");
             List<stage> stages = new List<stage>();
 
-            stages = srp.ReadSRP(stages, "Finland.srp");
-            stages = srp.RallyPartialToFull(stages, stagenumber);
-            srp.WriteSRP(stages, stagenumber, "Test.srp");
+            stages = srp.ReadSRP(stages, "France.srp");
+            stages = srp.NewRallyPartialToFull(stages, stagenumber);
+            srp.WriteSRP(stages, stagenumber, "TestFrance.srp");
             // TEST END
 
         }

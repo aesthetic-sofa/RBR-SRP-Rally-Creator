@@ -1,0 +1,28 @@
+##### SS1 #####
+service 20
+mechanics 2
+skill competent
+weather dry
+tyres tarmac dry
+stage 41 
+
+##### SS2 #####
+stage 42 
+
+##### SS3 #####
+service 40
+mechanics 4
+stage 43 
+
+##### SS4 #####
+service 10
+stage 44 
+
+##### SS5 #####
+service 60
+mechanics 6
+stage 45 
+
+##### SS6 #####
+stage 46 
+

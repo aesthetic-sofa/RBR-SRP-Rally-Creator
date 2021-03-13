@@ -70,6 +70,142 @@ namespace SRP_Rallies_Manager
             return target;
         }
 
+        public bool isPartialValid(string partial, string full)
+        {
+            bool valid = false;
+
+            if (partial.Contains(' '))
+            {
+                string[] partialSplit = partial.Split(' ');
+                string[] fullSplit = full.Split(' ');
+
+                //List<string> partialSplit = partialSplitArray.ToList();
+                //List<string> fullSplit = fullSplitArray.ToList();
+
+                bool checkword0 = false;
+                bool checkword1 = false;
+                bool checkword2 = false;
+                bool checkword3 = false;
+
+                for (int i = 0; i < fullSplit[0].Length; i++)
+                {
+                    string substringWord0 = fullSplit[0].Substring(0, i);
+                    bool checkA = String.Equals(partialSplit[0], substringWord0, StringComparison.OrdinalIgnoreCase);
+                    if (checkA == true) checkword0 = true;
+                }
+                int count0 = fullSplit.Count();
+                if ( count0 == 2)
+                {
+                    for (int j = 0; j < fullSplit[1].Length; j++)
+                    {
+                        string substringWord1 = fullSplit[1].Substring(0, j);
+                        bool checkB = String.Equals(partialSplit[1], substringWord1, StringComparison.OrdinalIgnoreCase);
+                        if (checkB == true) checkword1 = true;
+                    }
+                }
+
+
+                if (checkword0 == true && checkword1 == true) valid = true;
+                else
+                {
+                    int count1 = fullSplit.Count();
+                    if (count1 == 2)
+                    {
+                        for (int k = 0; k < fullSplit[1].Length; k++)
+                        {
+                            string substringWord2 = fullSplit[1].Substring(0, k);
+                            bool checkC = String.Equals(partialSplit[0], substringWord2, StringComparison.OrdinalIgnoreCase);
+                            if (checkC == true) checkword2 = true;
+                        }
+                    }
+
+
+                    for (int l = 0; l < fullSplit[0].Length; l++)
+                    {
+                        string substringWord3 = fullSplit[0].Substring(0, l);
+                        bool checkD = String.Equals(partialSplit[1], substringWord3, StringComparison.OrdinalIgnoreCase);
+                        if (checkD == true) checkword3 = true;
+                    }
+                }
+                if (checkword2 == true && checkword3 == true) valid = true;
+
+            }
+
+            else
+            {
+                int fullLength = full.Length;
+                bool check = false;
+                for (int i = 0; i < fullLength; i++)
+                {
+                    string substring = full.Substring(0, i);
+                    check = String.Equals(partial, substring, StringComparison.OrdinalIgnoreCase);
+                    if (check == true) valid = true;
+
+                }
+            }
+
+            return valid;
+        }
+
+        public stage NewPartialToFull(stage stage)
+        {
+            // Weather translations.
+            if (isPartialValid(stage.Weather, "dry") == true && stage.Weather != "") stage.Weather = "dry";
+            if (isPartialValid(stage.Weather, "random") == true && stage.Weather != "") stage.Weather = "random";
+            if (isPartialValid(stage.Weather, "bad") == true && stage.Weather != "") stage.Weather = "bad";
+
+            // Tyres translation.
+            if (isPartialValid(stage.Tyres, "tarmac dry") == true && stage.Tyres != "") stage.Tyres = "tarmac dry";
+            if (isPartialValid(stage.Tyres, "tarmac intermediate") == true && stage.Tyres != "") stage.Tyres = "tarmac intermediate";
+            if (isPartialValid(stage.Tyres, "tarmac wet") == true && stage.Tyres != "") stage.Tyres = "tarmac wet";
+            if (isPartialValid(stage.Tyres, "gravel dry") == true && stage.Tyres != "") stage.Tyres = "gravel dry";
+            if (isPartialValid(stage.Tyres, "gravel intermediate") == true && stage.Tyres != "") stage.Tyres = "gravel intermediate";
+            if (isPartialValid(stage.Tyres, "gravel wet") == true && stage.Tyres != "") stage.Tyres = "gravel wet";
+            if (isPartialValid(stage.Tyres, "snow") == true && stage.Tyres != "") stage.Tyres = "snow";
+
+            // Conditions translation.
+            if (isPartialValid(stage.Conditions, "crisp") == true && stage.Conditions != "") stage.Conditions = "crisp";
+            if (isPartialValid(stage.Conditions, "hazy") == true && stage.Conditions != "") stage.Conditions = "hazy";
+            if (isPartialValid(stage.Conditions, "norain") == true && stage.Conditions != "") stage.Conditions = "norain";
+            if (isPartialValid(stage.Conditions, "lightrain") == true && stage.Conditions != "") stage.Conditions = "lightrain";
+            if (isPartialValid(stage.Conditions, "heavyrain") == true && stage.Conditions != "") stage.Conditions = "heavyrain";
+            if (isPartialValid(stage.Conditions, "nosnow") == true && stage.Conditions != "") stage.Conditions = "nosnow";
+            if (isPartialValid(stage.Conditions, "lightsnow") == true && stage.Conditions != "") stage.Conditions = "lightsnow";
+            if (isPartialValid(stage.Conditions, "heavysnow") == true && stage.Conditions != "") stage.Conditions = "heavysnow";
+            if (isPartialValid(stage.Conditions, "lightfog") == true && stage.Conditions != "") stage.Conditions = "lightfog";
+            if (isPartialValid(stage.Conditions, "heavyfog") == true && stage.Conditions != "") stage.Conditions = "heavyfog";
+
+            // Sky translation.
+            if (isPartialValid(stage.Sky, "clear") == true && stage.Sky != "") stage.Sky = "clear";
+            if (isPartialValid(stage.Sky, "partcloud") == true && stage.Sky != "") stage.Sky = "partcloud";
+            if (isPartialValid(stage.Sky, "lightcloud") == true && stage.Sky != "") stage.Sky = "lightcloud";
+            if (isPartialValid(stage.Sky, "heavycloud") == true && stage.Sky != "") stage.Sky = "heavycloud";
+
+            // TimeOfDay translation.
+            if (isPartialValid(stage.TimeOfDay, "morning") == true && stage.TimeOfDay != "") stage.TimeOfDay = "morning";
+            if (isPartialValid(stage.TimeOfDay, "noon") == true && stage.TimeOfDay != "") stage.TimeOfDay = "noon";
+            if (isPartialValid(stage.TimeOfDay, "evening") == true && stage.TimeOfDay != "") stage.TimeOfDay = "evening";
+
+            // Surface translation.
+            if (isPartialValid(stage.Surface, "dry") == true && stage.Surface != "") stage.Surface = "dry";
+            if (isPartialValid(stage.Surface, "damp") == true && stage.Surface != "") stage.Surface = "damp";
+            if (isPartialValid(stage.Surface, "wet") == true && stage.Surface != "") stage.Surface = "wet";
+
+            // Track translation.
+            if (isPartialValid(stage.Track, "new") == true && stage.Track != "") stage.Track = "new";
+            if (isPartialValid(stage.Track, "normal") == true && stage.Track != "") stage.Track = "normal";
+            if (isPartialValid(stage.Track, "worn") == true && stage.Track != "") stage.Track = "worn";
+
+            // Skill translation.
+            if (isPartialValid(stage.Skill, "inexperienced") == true && stage.Skill != "") stage.Skill = "inexperienced";
+            if (isPartialValid(stage.Skill, "proficient") == true && stage.Skill != "") stage.Skill = "proficient";
+            if (isPartialValid(stage.Skill, "competent") == true && stage.Skill != "") stage.Skill = "competent";
+            if (isPartialValid(stage.Skill, "skilled") == true && stage.Skill != "") stage.Skill = "skilled";
+            if (isPartialValid(stage.Skill, "expert") == true && stage.Skill != "") stage.Skill = "expert";
+
+            return stage;
+        }
+
         public stage PartialToFull(stage stage)
         {
             // Weather translations.
@@ -353,6 +489,12 @@ namespace SRP_Rallies_Manager
         public List<stage> RallyPartialToFull(List<stage> stages, int totalstagenumber) // Translates a whole rally (SRP) from partial to full notation.
         {
             for (int i = 0; i < totalstagenumber; i++) PartialToFull(stages[i]);
+            return stages;
+        }
+
+        public List<stage> NewRallyPartialToFull(List<stage> stages, int totalstagenumber) // Translates a whole rally (SRP) from partial to full notation.
+        {
+            for (int i = 0; i < totalstagenumber; i++) NewPartialToFull(stages[i]);
             return stages;
         }
 
