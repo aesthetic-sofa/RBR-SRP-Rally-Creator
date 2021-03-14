@@ -23,12 +23,17 @@ namespace SRP_Rallies_Manager
 
             // TEST START
             SRP srp = new SRP();
-            int stagenumber = srp.CountStages("France.srp");
+            int stagenumber = srp.CountStages("FullSeason.srp");
             List<stage> stages = new List<stage>();
 
-            stages = srp.ReadSRP(stages, "France.srp");
+            stages = srp.ReadSRP(stages, "FullSeason.srp");
             stages = srp.NewRallyPartialToFull(stages, stagenumber);
-            srp.WriteSRP(stages, stagenumber, "TestFrance.srp");
+            srp.WriteSRP(stages, stagenumber, "TestFullSeason.srp");
+
+            CSV csv = new CSV();
+            List<ValidCombo> tracklist = new List<ValidCombo>();
+            tracklist=csv.ReadCSV();
+            csv.writeCSV(tracklist, "test.csv");
             // TEST END
 
         }

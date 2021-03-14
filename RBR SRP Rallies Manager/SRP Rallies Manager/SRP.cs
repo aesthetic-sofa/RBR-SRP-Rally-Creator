@@ -503,10 +503,12 @@ namespace SRP_Rallies_Manager
             using (StreamWriter fileCreator = File.CreateText(filepath))
             {
                 fileCreator.Write("");
+                fileCreator.Close();
             }
 
             for (int i = 0; i < totalstagenumber; i++)
                 WriteStage(stages[i], filepath, i + 1);
+            
         }
 
     }
