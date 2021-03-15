@@ -1,0 +1,137 @@
+##### SS1 #####
+service 10
+mechanics 4
+skill skilled
+weather good
+tyres tarmac dry
+stage 41 
+
+##### SS2 #####
+stage 42 
+
+##### SS3 #####
+service 40
+stage 43 
+
+##### SS4 #####
+stage 44 
+
+##### SS5 #####
+service 40
+stage 45 
+
+##### SS6 #####
+stage 46 
+
+##### SS7 #####
+service 10
+tyres snow
+stage 10 
+
+##### SS8 #####
+stage 11 
+
+##### SS9 #####
+service 40
+stage 12 
+
+##### SS10 #####
+stage 13 
+
+##### SS11 #####
+service 40
+stage 14 
+
+##### SS12 #####
+stage 15 
+
+##### SS13 #####
+service 10
+tyres gravel dry
+stage 61 
+
+##### SS14 #####
+stage 62 
+
+##### SS15 #####
+service 40
+stage 63 
+
+##### SS16 #####
+stage 64 
+
+##### SS17 #####
+service 40
+stage 65 
+
+##### SS18 #####
+stage 66 
+
+##### SS19 #####
+service 10
+stage 31 
+
+##### SS20 #####
+stage 32 
+
+##### SS21 #####
+service 40
+stage 33 
+
+##### SS22 #####
+stage 34 
+
+##### SS23 #####
+service 40
+stage 35 
+
+##### SS24 #####
+stage 36 
+
+##### SS25 #####
+service 30
+stage 51 
+
+##### SS26 #####
+stage 52 
+
+##### SS27 #####
+service 40
+stage 53 
+
+##### SS28 #####
+stage 54 
+
+##### SS29 #####
+service 40
+stage 55 
+
+##### SS30 #####
+stage 56 
+
+##### SS31 #####
+stage 20 
+
+##### SS32 #####
+service 30
+stage 21 
+
+##### SS33 #####
+stage 22 
+
+##### SS34 #####
+service 60
+mechanics 6
+stage 23 
+
+##### SS35 #####
+stage 24 
+
+##### SS36 #####
+service 30
+mechanics 4
+stage 25 
+
+##### SS37 #####
+stage 71 
+

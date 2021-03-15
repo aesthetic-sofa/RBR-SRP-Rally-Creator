@@ -48,36 +48,21 @@ namespace SRP_Rallies_Manager
             return trackList;
         }
 
-        public void WriteValidCombo(ValidCombo combo, string filepath) // Writes a full CSV of the valid combos. Useful for debugging.
+        public void writeCSV(List<ValidCombo> tracklist, string filepath) // Writes a full CSV of the valid combos. Useful for debugging.
         {
-            using (StreamWriter writer = File.AppendText(filepath))
+            using (StreamWriter writer = File.CreateText(filepath))
             {
-
-                // We write the combo fields to the specified file.
-                //writer.WriteLine(combo.StageNumber.ToString(),';',combo.StageName,';',combo.TintSet,';',
-                //    combo.Conditions,';',combo.Sky,';',combo.TimeOfDay,';',combo.Surface,';',combo.Track);
-
-                //writer.WriteLine("{0};{1};{2};{3};{4};{5};{6};{7}", combo.StageNumber.ToString(), combo.StageName, combo.TintSet, combo.Conditions, combo.Sky, combo.TimeOfDay, combo.Surface, combo.Track);
-                string fullLine = combo.StageNumber.ToString() + ';' + combo.StageName + ';' + combo.TintSet + ';' +
-                  combo.Conditions + ';' + combo.Sky + ';' + combo.TimeOfDay + ';' + combo.Surface + ';' + combo.Track;
-                writer.WriteLine(fullLine);
-                // We close the stream.
+                writer.WriteLine("Stage Number;Stage Name;Tint Set;Conditions;Sky;Time Of Day;Surface;Track");
+                for (int i = 0; i < tracklist.Count; ++i)
+                {
+                    ValidCombo combo = tracklist[i];
+                    writer.WriteLine("{0};{1};{2};{3};{4};{5};{6};{7}",
+                                     combo.StageNumber.ToString(), combo.StageName, combo.TintSet, combo.Conditions, combo.Sky, combo.TimeOfDay, combo.Surface, combo.Track);
+                }
                 writer.Close();
             }
         }
 
-        public void writeCSV(List<ValidCombo> tracklist, string filepath) // Writes a full CSV of the valid combos. Useful for debugging.
-        {
-            using (StreamWriter fileCreator = File.CreateText(filepath))
-            {
-                fileCreator.WriteLine("Stage Number;Stage Name;Tint Set;Conditions;Sky;Time Of Day;Surface;Track");
-                fileCreator.Close();
-            }
-
-            for (int i = 0; i < tracklist.Count; i++)
-                WriteValidCombo(tracklist[i], filepath);
-        }
-        
         public List<string> GenerateValidConditionsList (int stageNumber, List<ValidCombo> trackList)
         {
             List<string> UniqueValidConditionsList = new List<string>();

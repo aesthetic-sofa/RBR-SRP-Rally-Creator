@@ -397,34 +397,29 @@ namespace SRP_Rallies_Manager
                 bool isSetupLine = String.Equals(netWords[0], "setup", StringComparison.OrdinalIgnoreCase);
                 bool isHotlapLine = String.Equals(netWords[0], "hotlap", StringComparison.OrdinalIgnoreCase);
                 bool isStageLine = String.Equals(netWords[0], "stage", StringComparison.OrdinalIgnoreCase);
-
-                // We default all of the struct fields to "", for style.
-                //rallyStructs.stage temp = new rallyStructs.stage();
-                //temp = SRPstruct.DefaultStage(stages[SSnumber]);
-                //SRPstruct.CopyStage(stages[SSnumber],temp);
                 
 
                 // We populate the stage structs. We also join every word after the "key word" at the start of each line when needed.
                 if (isServiceLine == true) stages[SSnumber].Servicetime = netWords[1];
-                if (isMechanicsLine == true) stages[SSnumber].Mechanics = netWords[1];
-                if (isSkillLine == true) stages[SSnumber].Skill = netWords[1];
-                if (isWeatherLine == true) stages[SSnumber].Weather = netWords[1];
-                if (isTyresLine == true)
+                else if (isMechanicsLine == true) stages[SSnumber].Mechanics = netWords[1];
+                else if (isSkillLine == true) stages[SSnumber].Skill = netWords[1];
+                else if (isWeatherLine == true) stages[SSnumber].Weather = netWords[1];
+                else if (isTyresLine == true)
                 {
                     if (netWordsCount == 2) stages[SSnumber].Tyres = netWords[1];
-                    if (netWordsCount >= 3) stages[SSnumber].Tyres = (netWords[1] + " " + netWords[2]);
+                    else if (netWordsCount >= 3) stages[SSnumber].Tyres = (netWords[1] + " " + netWords[2]);
                 }
-                if (isConditionsLine == true) stages[SSnumber].Conditions = netWords[1];
-                if (isSkyLine == true) stages[SSnumber].Sky = netWords[1];
-                if (isTimeOfDayLine == true) stages[SSnumber].TimeOfDay = netWords[1];
-                if (isSurfaceLine == true) stages[SSnumber].Surface = netWords[1];
-                if (isTrackLine == true) stages[SSnumber].Track = netWords[1];
-                if (isSetupLine == true) stages[SSnumber].Setup = netWords[1];
-                if (isHotlapLine == true) stages[SSnumber].Hotlap = netWords[1];
-                if (isStageLine == true)
+                else if (isConditionsLine == true) stages[SSnumber].Conditions = netWords[1];
+                else if (isSkyLine == true) stages[SSnumber].Sky = netWords[1];
+                else if (isTimeOfDayLine == true) stages[SSnumber].TimeOfDay = netWords[1];
+                else if (isSurfaceLine == true) stages[SSnumber].Surface = netWords[1];
+                else if (isTrackLine == true) stages[SSnumber].Track = netWords[1];
+                else if (isSetupLine == true) stages[SSnumber].Setup = netWords[1];
+                else if (isHotlapLine == true) stages[SSnumber].Hotlap = netWords[1];
+                else if (isStageLine == true)
                 {
                     if (netWordsCount == 2) stages[SSnumber].Stagenn = netWords[1];
-                    if (netWordsCount >= 3) // If there is a label, the whole label must be joined and stored in the Stagelabel field.
+                    else if (netWordsCount >= 3) // If there is a label, the whole label must be joined and stored in the Stagelabel field.
                     {
                         stages[SSnumber].Stagenn = netWords[1];
 
@@ -502,15 +497,36 @@ namespace SRP_Rallies_Manager
 
         public void WriteSRP(List<stage> stages, int totalstagenumber, string filepath)
         {
-            using (StreamWriter fileCreator = File.CreateText(filepath))
+            using (StreamWriter writer = File.CreateText(filepath))
             {
-                fileCreator.Write("");
-                fileCreator.Close();
-            }
+                writer.Write("");
 
-            for (int i = 0; i < totalstagenumber; i++)
-                WriteStage(stages[i], filepath, i + 1);
-            
+                for (int i = 0; i < totalstagenumber; i++)
+                {
+                    writer.WriteLine("##### SS" + (i+1) + " #####"); // We add a separator (for style).
+
+                    // We write the composed strings to the specified file.
+                    if (stages[i].Servicetime != "") writer.WriteLine("service " + stages[i].Servicetime);
+                    if (stages[i].Mechanics != "") writer.WriteLine("mechanics " + stages[i].Mechanics);
+                    if (stages[i].Skill != "") writer.WriteLine("skill " + stages[i].Skill);
+                    if (stages[i].Weather != "") writer.WriteLine("weather " + stages[i].Weather);
+                    if (stages[i].Tyres != "") writer.WriteLine("tyres " + stages[i].Tyres);
+                    if (stages[i].Conditions != "") writer.WriteLine("conditions " + stages[i].Conditions);
+                    if (stages[i].Sky != "") writer.WriteLine("sky " + stages[i].Sky);
+                    if (stages[i].TimeOfDay != "") writer.WriteLine("timeOfDay " + stages[i].TimeOfDay);
+                    if (stages[i].Surface != "") writer.WriteLine("surface " + stages[i].Surface);
+                    if (stages[i].Track != "") writer.WriteLine("track " + stages[i].Track);
+                    if (stages[i].Setup != "") writer.WriteLine("setup " + stages[i].Setup);
+                    if (stages[i].Hotlap != "") writer.WriteLine("hotlap " + stages[i].Hotlap);
+                    if (stages[i].Stagenn != "") writer.WriteLine("stage " + stages[i].Stagenn + " " + stages[i].Stagelabel);
+
+                    writer.WriteLine(); // We add another separator (for style).
+
+                }
+
+                writer.Close();
+
+            }
         }
 
     }
