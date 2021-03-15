@@ -32,7 +32,7 @@ namespace SRP_Rallies_Manager
 
         public stage TrimStage(stage stage) // Deletes unwanted white spaces from every field of a stage.
         {
-            if(stage.Servicetime != null) stage.Servicetime=stage.Servicetime.Trim();
+            if (stage.Servicetime != null) stage.Servicetime=stage.Servicetime.Trim();
             if (stage.Mechanics != null) stage.Mechanics=stage.Mechanics.Trim();
             if (stage.Skill != null) stage.Skill=stage.Skill.Trim();
             if (stage.Weather != null) stage.Weather=stage.Weather.Trim();
@@ -147,126 +147,126 @@ namespace SRP_Rallies_Manager
             return valid;
         }
 
-        public stage NewPartialToFull(stage stage)
+        public stage PartialToFull(stage stage)
         {
             // Weather translations.
             if (isPartialValid(stage.Weather, "dry") == true && stage.Weather != "") stage.Weather = "dry";
-            if (isPartialValid(stage.Weather, "random") == true && stage.Weather != "") stage.Weather = "random";
-            if (isPartialValid(stage.Weather, "bad") == true && stage.Weather != "") stage.Weather = "bad";
+            else if (isPartialValid(stage.Weather, "random") == true && stage.Weather != "") stage.Weather = "random";
+            else if (isPartialValid(stage.Weather, "bad") == true && stage.Weather != "") stage.Weather = "bad";
 
             // Tyres translation.
             if (isPartialValid(stage.Tyres, "tarmac dry") == true && stage.Tyres != "") stage.Tyres = "tarmac dry";
-            if (isPartialValid(stage.Tyres, "tarmac intermediate") == true && stage.Tyres != "") stage.Tyres = "tarmac intermediate";
-            if (isPartialValid(stage.Tyres, "tarmac wet") == true && stage.Tyres != "") stage.Tyres = "tarmac wet";
-            if (isPartialValid(stage.Tyres, "gravel dry") == true && stage.Tyres != "") stage.Tyres = "gravel dry";
-            if (isPartialValid(stage.Tyres, "gravel intermediate") == true && stage.Tyres != "") stage.Tyres = "gravel intermediate";
-            if (isPartialValid(stage.Tyres, "gravel wet") == true && stage.Tyres != "") stage.Tyres = "gravel wet";
-            if (isPartialValid(stage.Tyres, "snow") == true && stage.Tyres != "") stage.Tyres = "snow";
+            else if (isPartialValid(stage.Tyres, "tarmac intermediate") == true && stage.Tyres != "") stage.Tyres = "tarmac intermediate";
+            else if (isPartialValid(stage.Tyres, "tarmac wet") == true && stage.Tyres != "") stage.Tyres = "tarmac wet";
+            else if (isPartialValid(stage.Tyres, "gravel dry") == true && stage.Tyres != "") stage.Tyres = "gravel dry";
+            else if (isPartialValid(stage.Tyres, "gravel intermediate") == true && stage.Tyres != "") stage.Tyres = "gravel intermediate";
+            else if (isPartialValid(stage.Tyres, "gravel wet") == true && stage.Tyres != "") stage.Tyres = "gravel wet";
+            else if (isPartialValid(stage.Tyres, "snow") == true && stage.Tyres != "") stage.Tyres = "snow";
 
             // Conditions translation.
             if (isPartialValid(stage.Conditions, "crisp") == true && stage.Conditions != "") stage.Conditions = "crisp";
-            if (isPartialValid(stage.Conditions, "hazy") == true && stage.Conditions != "") stage.Conditions = "hazy";
-            if (isPartialValid(stage.Conditions, "norain") == true && stage.Conditions != "") stage.Conditions = "norain";
-            if (isPartialValid(stage.Conditions, "lightrain") == true && stage.Conditions != "") stage.Conditions = "lightrain";
-            if (isPartialValid(stage.Conditions, "heavyrain") == true && stage.Conditions != "") stage.Conditions = "heavyrain";
-            if (isPartialValid(stage.Conditions, "nosnow") == true && stage.Conditions != "") stage.Conditions = "nosnow";
-            if (isPartialValid(stage.Conditions, "lightsnow") == true && stage.Conditions != "") stage.Conditions = "lightsnow";
-            if (isPartialValid(stage.Conditions, "heavysnow") == true && stage.Conditions != "") stage.Conditions = "heavysnow";
-            if (isPartialValid(stage.Conditions, "lightfog") == true && stage.Conditions != "") stage.Conditions = "lightfog";
-            if (isPartialValid(stage.Conditions, "heavyfog") == true && stage.Conditions != "") stage.Conditions = "heavyfog";
+            else if (isPartialValid(stage.Conditions, "hazy") == true && stage.Conditions != "") stage.Conditions = "hazy";
+            else if (isPartialValid(stage.Conditions, "norain") == true && stage.Conditions != "") stage.Conditions = "norain";
+            else if (isPartialValid(stage.Conditions, "lightrain") == true && stage.Conditions != "") stage.Conditions = "lightrain";
+            else if (isPartialValid(stage.Conditions, "heavyrain") == true && stage.Conditions != "") stage.Conditions = "heavyrain";
+            else if (isPartialValid(stage.Conditions, "nosnow") == true && stage.Conditions != "") stage.Conditions = "nosnow";
+            else if (isPartialValid(stage.Conditions, "lightsnow") == true && stage.Conditions != "") stage.Conditions = "lightsnow";
+            else if (isPartialValid(stage.Conditions, "heavysnow") == true && stage.Conditions != "") stage.Conditions = "heavysnow";
+            else if (isPartialValid(stage.Conditions, "lightfog") == true && stage.Conditions != "") stage.Conditions = "lightfog";
+            else if (isPartialValid(stage.Conditions, "heavyfog") == true && stage.Conditions != "") stage.Conditions = "heavyfog";
 
             // Sky translation.
             if (isPartialValid(stage.Sky, "clear") == true && stage.Sky != "") stage.Sky = "clear";
-            if (isPartialValid(stage.Sky, "partcloud") == true && stage.Sky != "") stage.Sky = "partcloud";
-            if (isPartialValid(stage.Sky, "lightcloud") == true && stage.Sky != "") stage.Sky = "lightcloud";
-            if (isPartialValid(stage.Sky, "heavycloud") == true && stage.Sky != "") stage.Sky = "heavycloud";
+            else if (isPartialValid(stage.Sky, "partcloud") == true && stage.Sky != "") stage.Sky = "partcloud";
+            else if (isPartialValid(stage.Sky, "lightcloud") == true && stage.Sky != "") stage.Sky = "lightcloud";
+            else if (isPartialValid(stage.Sky, "heavycloud") == true && stage.Sky != "") stage.Sky = "heavycloud";
 
             // TimeOfDay translation.
             if (isPartialValid(stage.TimeOfDay, "morning") == true && stage.TimeOfDay != "") stage.TimeOfDay = "morning";
-            if (isPartialValid(stage.TimeOfDay, "noon") == true && stage.TimeOfDay != "") stage.TimeOfDay = "noon";
-            if (isPartialValid(stage.TimeOfDay, "evening") == true && stage.TimeOfDay != "") stage.TimeOfDay = "evening";
+            else if (isPartialValid(stage.TimeOfDay, "noon") == true && stage.TimeOfDay != "") stage.TimeOfDay = "noon";
+            else if (isPartialValid(stage.TimeOfDay, "evening") == true && stage.TimeOfDay != "") stage.TimeOfDay = "evening";
 
             // Surface translation.
             if (isPartialValid(stage.Surface, "dry") == true && stage.Surface != "") stage.Surface = "dry";
-            if (isPartialValid(stage.Surface, "damp") == true && stage.Surface != "") stage.Surface = "damp";
-            if (isPartialValid(stage.Surface, "wet") == true && stage.Surface != "") stage.Surface = "wet";
+            else if (isPartialValid(stage.Surface, "damp") == true && stage.Surface != "") stage.Surface = "damp";
+            else if (isPartialValid(stage.Surface, "wet") == true && stage.Surface != "") stage.Surface = "wet";
 
             // Track translation.
             if (isPartialValid(stage.Track, "new") == true && stage.Track != "") stage.Track = "new";
-            if (isPartialValid(stage.Track, "normal") == true && stage.Track != "") stage.Track = "normal";
-            if (isPartialValid(stage.Track, "worn") == true && stage.Track != "") stage.Track = "worn";
+            else if (isPartialValid(stage.Track, "normal") == true && stage.Track != "") stage.Track = "normal";
+            else if (isPartialValid(stage.Track, "worn") == true && stage.Track != "") stage.Track = "worn";
 
             // Skill translation.
             if (isPartialValid(stage.Skill, "inexperienced") == true && stage.Skill != "") stage.Skill = "inexperienced";
-            if (isPartialValid(stage.Skill, "proficient") == true && stage.Skill != "") stage.Skill = "proficient";
-            if (isPartialValid(stage.Skill, "competent") == true && stage.Skill != "") stage.Skill = "competent";
-            if (isPartialValid(stage.Skill, "skilled") == true && stage.Skill != "") stage.Skill = "skilled";
-            if (isPartialValid(stage.Skill, "expert") == true && stage.Skill != "") stage.Skill = "expert";
+            else if (isPartialValid(stage.Skill, "proficient") == true && stage.Skill != "") stage.Skill = "proficient";
+            else if (isPartialValid(stage.Skill, "competent") == true && stage.Skill != "") stage.Skill = "competent";
+            else if (isPartialValid(stage.Skill, "skilled") == true && stage.Skill != "") stage.Skill = "skilled";
+            else if (isPartialValid(stage.Skill, "expert") == true && stage.Skill != "") stage.Skill = "expert";
 
             return stage;
         }
 
-        public stage PartialToFull(stage stage)
+        public stage OldPartialToFull(stage stage)
         {
             // Weather translations.
             if (String.Equals(stage.Weather, "d", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "dry";
-            if (String.Equals(stage.Weather, "r", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "random";
-            if (String.Equals(stage.Weather, "b", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "bad";
+            else if (String.Equals(stage.Weather, "r", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "random";
+            else if (String.Equals(stage.Weather, "b", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "bad";
 
             // Tyres translation.
             if (String.Equals(stage.Tyres, "t d", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac dry";
-            if (String.Equals(stage.Tyres, "d t", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac dry";
-            if (String.Equals(stage.Tyres, "t i", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac intermediate";
-            if (String.Equals(stage.Tyres, "i t", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac intermediate";
-            if (String.Equals(stage.Tyres, "t w", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac wet";
-            if (String.Equals(stage.Tyres, "w t", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac wet";
-            if (String.Equals(stage.Tyres, "g d", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel dry";
-            if (String.Equals(stage.Tyres, "d g", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel dry";
-            if (String.Equals(stage.Tyres, "g i", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel intermediate";
-            if (String.Equals(stage.Tyres, "i g", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel intermediate";
-            if (String.Equals(stage.Tyres, "g w", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel wet";
-            if (String.Equals(stage.Tyres, "w g", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel wet";
-            if (String.Equals(stage.Tyres, "s", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "snow";
+            else if (String.Equals(stage.Tyres, "d t", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac dry";
+            else if (String.Equals(stage.Tyres, "t i", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac intermediate";
+            else if (String.Equals(stage.Tyres, "i t", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac intermediate";
+            else if (String.Equals(stage.Tyres, "t w", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac wet";
+            else if (String.Equals(stage.Tyres, "w t", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac wet";
+            else if (String.Equals(stage.Tyres, "g d", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel dry";
+            else if (String.Equals(stage.Tyres, "d g", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel dry";
+            else if (String.Equals(stage.Tyres, "g i", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel intermediate";
+            else if (String.Equals(stage.Tyres, "i g", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel intermediate";
+            else if (String.Equals(stage.Tyres, "g w", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel wet";
+            else if (String.Equals(stage.Tyres, "w g", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel wet";
+            else if (String.Equals(stage.Tyres, "s", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "snow";
 
             // Conditions translation.
             if (String.Equals(stage.Conditions, "c", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "crisp";
-            if (String.Equals(stage.Conditions, "ha", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "hazy";
-            if (String.Equals(stage.Conditions, "nor", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "norain";
-            if (String.Equals(stage.Conditions, "lightr", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightrain";
-            if (String.Equals(stage.Conditions, "heavyr", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavyrain";
-            if (String.Equals(stage.Conditions, "nos", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "nosnow";
-            if (String.Equals(stage.Conditions, "lights", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightsnow";
-            if (String.Equals(stage.Conditions, "heavys", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavysnow";
-            if (String.Equals(stage.Conditions, "lightf", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightfog";
-            if (String.Equals(stage.Conditions, "heavyf", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavyfog";
+            else if (String.Equals(stage.Conditions, "ha", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "hazy";
+            else if (String.Equals(stage.Conditions, "nor", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "norain";
+            else if (String.Equals(stage.Conditions, "lightr", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightrain";
+            else if (String.Equals(stage.Conditions, "heavyr", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavyrain";
+            else if (String.Equals(stage.Conditions, "nos", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "nosnow";
+            else if (String.Equals(stage.Conditions, "lights", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightsnow";
+            else if (String.Equals(stage.Conditions, "heavys", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavysnow";
+            else if (String.Equals(stage.Conditions, "lightf", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightfog";
+            else if (String.Equals(stage.Conditions, "heavyf", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavyfog";
 
             // Sky translation.
             if (String.Equals(stage.Sky, "c", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "clear";
-            if (String.Equals(stage.Sky, "p", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "partcloud";
-            if (String.Equals(stage.Sky, "l", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "lightcloud";
-            if (String.Equals(stage.Sky, "h", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "heavycloud";
+            else if (String.Equals(stage.Sky, "p", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "partcloud";
+            else if (String.Equals(stage.Sky, "l", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "lightcloud";
+            else if (String.Equals(stage.Sky, "h", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "heavycloud";
 
             // TimeOfDay translation.
             if (String.Equals(stage.TimeOfDay, "m", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "morning";
-            if (String.Equals(stage.TimeOfDay, "n", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "noon";
-            if (String.Equals(stage.TimeOfDay, "e", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "evening";
+            else if (String.Equals(stage.TimeOfDay, "n", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "noon";
+            else if (String.Equals(stage.TimeOfDay, "e", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "evening";
 
             // Surface translation.
             if (String.Equals(stage.Surface, "dr", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "dry";
-            if (String.Equals(stage.Surface, "da", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "damp";
-            if (String.Equals(stage.Surface, "w", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "wet";
+            else if (String.Equals(stage.Surface, "da", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "damp";
+            else if (String.Equals(stage.Surface, "w", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "wet";
 
             // Track translation.
             if (String.Equals(stage.Track, "ne", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "new";
-            if (String.Equals(stage.Track, "no", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "normal";
-            if (String.Equals(stage.Track, "w", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "worn";
+            else if (String.Equals(stage.Track, "no", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "normal";
+            else if (String.Equals(stage.Track, "w", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "worn";
 
             // Skill translation.
             if (String.Equals(stage.Skill, "i", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "inexperienced";
-            if (String.Equals(stage.Skill, "p", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "proficient";
-            if (String.Equals(stage.Skill, "c", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "competent";
-            if (String.Equals(stage.Skill, "s", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "skilled";
-            if (String.Equals(stage.Skill, "e", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "expert";
+            else if (String.Equals(stage.Skill, "p", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "proficient";
+            else if (String.Equals(stage.Skill, "c", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "competent";
+            else if (String.Equals(stage.Skill, "s", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "skilled";
+            else if (String.Equals(stage.Skill, "e", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "expert";
 
             return stage;
         }
@@ -275,57 +275,57 @@ namespace SRP_Rallies_Manager
         {
             // Weather translations.
             if (String.Equals(stage.Weather, "0", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "dry";
-            if (String.Equals(stage.Weather, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "random";
-            if (String.Equals(stage.Weather, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "bad";
+            else if (String.Equals(stage.Weather, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "random";
+            else if (String.Equals(stage.Weather, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "bad";
 
             // Tyres translation.
             if (String.Equals(stage.Tyres, "0", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac dry";
-            if (String.Equals(stage.Tyres, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac intermediate";
-            if (String.Equals(stage.Tyres, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac wet";
-            if (String.Equals(stage.Tyres, "3", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel dry";
-            if (String.Equals(stage.Tyres, "4", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel intermediate";
-            if (String.Equals(stage.Tyres, "5", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel wet";
-            if (String.Equals(stage.Tyres, "6", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "snow";
+            else if (String.Equals(stage.Tyres, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac intermediate";
+            else if (String.Equals(stage.Tyres, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "tarmac wet";
+            else if (String.Equals(stage.Tyres, "3", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel dry";
+            else if (String.Equals(stage.Tyres, "4", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel intermediate";
+            else if (String.Equals(stage.Tyres, "5", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "gravel wet";
+            else if (String.Equals(stage.Tyres, "6", StringComparison.OrdinalIgnoreCase) == true) stage.Tyres = "snow";
 
             // Conditions translation.
             if (String.Equals(stage.Conditions, "0", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "crisp";
-            if (String.Equals(stage.Conditions, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "hazy";
-            if (String.Equals(stage.Conditions, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "norain";
-            if (String.Equals(stage.Conditions, "3", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightrain";
-            if (String.Equals(stage.Conditions, "4", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavyrain";
-            if (String.Equals(stage.Conditions, "5", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "nosnow";
-            if (String.Equals(stage.Conditions, "6", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightsnow";
-            if (String.Equals(stage.Conditions, "7", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavysnow";
-            if (String.Equals(stage.Conditions, "8", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightfog";
-            if (String.Equals(stage.Conditions, "9", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavyfog";
+            else if (String.Equals(stage.Conditions, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "hazy";
+            else if (String.Equals(stage.Conditions, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "norain";
+            else if (String.Equals(stage.Conditions, "3", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightrain";
+            else if (String.Equals(stage.Conditions, "4", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavyrain";
+            else if (String.Equals(stage.Conditions, "5", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "nosnow";
+            else if (String.Equals(stage.Conditions, "6", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightsnow";
+            else if (String.Equals(stage.Conditions, "7", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavysnow";
+            else if (String.Equals(stage.Conditions, "8", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "lightfog";
+            else if (String.Equals(stage.Conditions, "9", StringComparison.OrdinalIgnoreCase) == true) stage.Conditions = "heavyfog";
 
             // Sky translation.
             if (String.Equals(stage.Sky, "0", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "clear";
-            if (String.Equals(stage.Sky, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "partcloud";
-            if (String.Equals(stage.Sky, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "lightcloud";
-            if (String.Equals(stage.Sky, "3", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "heavycloud";
+            else if (String.Equals(stage.Sky, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "partcloud";
+            else if (String.Equals(stage.Sky, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "lightcloud";
+            else if (String.Equals(stage.Sky, "3", StringComparison.OrdinalIgnoreCase) == true) stage.Sky = "heavycloud";
 
             // TimeOfDay translation.
             if (String.Equals(stage.TimeOfDay, "0", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "morning";
-            if (String.Equals(stage.TimeOfDay, "1", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "noon";
-            if (String.Equals(stage.TimeOfDay, "2", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "evening";
+            else if (String.Equals(stage.TimeOfDay, "1", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "noon";
+            else if (String.Equals(stage.TimeOfDay, "2", StringComparison.OrdinalIgnoreCase) == true) stage.TimeOfDay = "evening";
 
             // Surface translation.
             if (String.Equals(stage.Surface, "0", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "dry";
-            if (String.Equals(stage.Surface, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "damp";
-            if (String.Equals(stage.Surface, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "wet";
+            else if (String.Equals(stage.Surface, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "damp";
+            else if (String.Equals(stage.Surface, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Surface = "wet";
 
             // Track translation.
             if (String.Equals(stage.Track, "0", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "new";
-            if (String.Equals(stage.Track, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "normal";
-            if (String.Equals(stage.Track, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "worn";
+            else if (String.Equals(stage.Track, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "normal";
+            else if (String.Equals(stage.Track, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Track = "worn";
 
             // Skill translation.
             if (String.Equals(stage.Skill, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "inexperienced";
-            if (String.Equals(stage.Skill, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "proficient";
-            if (String.Equals(stage.Skill, "3", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "competent";
-            if (String.Equals(stage.Skill, "4", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "skilled";
-            if (String.Equals(stage.Skill, "5", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "expert";
+            else if (String.Equals(stage.Skill, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "proficient";
+            else if (String.Equals(stage.Skill, "3", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "competent";
+            else if (String.Equals(stage.Skill, "4", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "skilled";
+            else if (String.Equals(stage.Skill, "5", StringComparison.OrdinalIgnoreCase) == true) stage.Skill = "expert";
 
             return stage;
         }
@@ -486,15 +486,15 @@ namespace SRP_Rallies_Manager
             }
         }
 
-        public List<stage> RallyPartialToFull(List<stage> stages, int totalstagenumber) // Translates a whole rally (SRP) from partial to full notation.
+        public List<stage> OldRallyPartialToFull(List<stage> stages, int totalstagenumber) // Translates a whole rally (SRP) from partial to full notation.
         {
-            for (int i = 0; i < totalstagenumber; i++) PartialToFull(stages[i]);
+            for (int i = 0; i < totalstagenumber; i++) OldPartialToFull(stages[i]);
             return stages;
         }
 
-        public List<stage> NewRallyPartialToFull(List<stage> stages, int totalstagenumber) // Translates a whole rally (SRP) from partial to full notation.
+        public List<stage> RallyPartialToFull(List<stage> stages, int totalstagenumber) // Translates a whole rally (SRP) from partial to full notation.
         {
-            for (int i = 0; i < totalstagenumber; i++) NewPartialToFull(stages[i]);
+            for (int i = 0; i < totalstagenumber; i++) PartialToFull(stages[i]);
             return stages;
         }
 

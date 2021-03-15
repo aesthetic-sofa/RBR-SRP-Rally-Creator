@@ -17,9 +17,9 @@ namespace SRP_Rallies_Manager
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
 
             // TEST START
             SRP srp = new SRP();
@@ -27,7 +27,7 @@ namespace SRP_Rallies_Manager
             List<stage> stages = new List<stage>();
 
             stages = srp.ReadSRP(stages, "FullSeason.srp");
-            stages = srp.NewRallyPartialToFull(stages, stagenumber);
+            stages = srp.RallyPartialToFull(stages, stagenumber);
             srp.WriteSRP(stages, stagenumber, "TestFullSeason.srp");
 
             CSV csv = new CSV();

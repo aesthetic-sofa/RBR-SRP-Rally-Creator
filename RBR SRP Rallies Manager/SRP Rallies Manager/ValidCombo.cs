@@ -20,5 +20,6 @@ namespace SRP_Rallies_Manager
         public string TimeOfDay { get => timeOfDay; set => timeOfDay = value; }
         public string Surface { get => surface; set => surface = value; }
         public string Track { get => track; set => track = value; }
+
     }
 }
