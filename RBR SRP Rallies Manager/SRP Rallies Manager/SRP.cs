@@ -150,7 +150,8 @@ namespace SRP_Rallies_Manager
         public stage PartialToFull(stage stage)
         {
             // Weather translations.
-            if (isPartialValid(stage.Weather, "dry") == true && stage.Weather != "") stage.Weather = "dry";
+            if (isPartialValid(stage.Weather, "dry") == true && stage.Weather != "") stage.Weather = "good";
+            else if (isPartialValid(stage.Weather, "good") == true && stage.Weather != "") stage.Weather = "good";
             else if (isPartialValid(stage.Weather, "random") == true && stage.Weather != "") stage.Weather = "random";
             else if (isPartialValid(stage.Weather, "bad") == true && stage.Weather != "") stage.Weather = "bad";
 
@@ -209,7 +210,8 @@ namespace SRP_Rallies_Manager
         public stage OldPartialToFull(stage stage)
         {
             // Weather translations.
-            if (String.Equals(stage.Weather, "d", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "dry";
+            if (String.Equals(stage.Weather, "d", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "good";
+            else if (String.Equals(stage.Weather, "g", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "good";
             else if (String.Equals(stage.Weather, "r", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "random";
             else if (String.Equals(stage.Weather, "b", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "bad";
 
@@ -274,7 +276,7 @@ namespace SRP_Rallies_Manager
         public stage NumberToFull(stage stage)
         {
             // Weather translations.
-            if (String.Equals(stage.Weather, "0", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "dry";
+            if (String.Equals(stage.Weather, "0", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "good";
             else if (String.Equals(stage.Weather, "1", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "random";
             else if (String.Equals(stage.Weather, "2", StringComparison.OrdinalIgnoreCase) == true) stage.Weather = "bad";
 
