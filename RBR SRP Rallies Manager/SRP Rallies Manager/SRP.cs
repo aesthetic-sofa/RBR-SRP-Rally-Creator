@@ -332,6 +332,104 @@ namespace SRP_Rallies_Manager
             return stage;
         }
 
+        public void NormalizeStageAttributes(stage stage)
+        {
+            if (String.Equals(stage.Weather, "Good", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Weather, "Random", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Weather, "Bad", StringComparison.OrdinalIgnoreCase) == false)
+            {
+                stage.Weather = "";
+            }
+
+            if (String.Equals(stage.Tyres, "Tarmac Dry", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Tyres, "Tarmac Intermediate", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Tyres, "Tarmac Wet", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Tyres, "Gravel Dry", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Tyres, "Gravel Intermediate", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Tyres, "Gravel Wet", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Tyres, "Snow", StringComparison.OrdinalIgnoreCase) == false)
+            {
+                stage.Tyres = "";
+            }
+
+            if (String.Equals(stage.Conditions, "crisp", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "hazy", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "norain", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "lightrain", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "heavyrain", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "nosnow", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "lightsnow", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "heavysnow", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "lightfog", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Conditions, "heavyfog", StringComparison.OrdinalIgnoreCase) == false)
+            {
+                stage.Conditions = "";
+            }
+
+            if (String.Equals(stage.Sky, "clear", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Sky, "partcloud", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Sky, "lightcloud", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Sky, "heavycloud", StringComparison.OrdinalIgnoreCase) == false)
+            {
+                stage.Sky = "";
+            }
+
+            if (String.Equals(stage.TimeOfDay, "morning", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.TimeOfDay, "noon", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.TimeOfDay, "evening", StringComparison.OrdinalIgnoreCase) == false)
+            {
+                stage.TimeOfDay = "";
+            }
+
+            if (String.Equals(stage.Surface, "dry", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Surface, "damp", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Surface, "wet", StringComparison.OrdinalIgnoreCase) == false)
+            {
+                stage.Surface = "";
+            }
+
+            if (String.Equals(stage.Track, "new", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Track, "normal", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Track, "worn", StringComparison.OrdinalIgnoreCase) == false)
+            {
+                stage.Track = "";
+            }
+
+            if (int.TryParse(stage.Setup, out _) == false || int.Parse(stage.Setup)<-3)
+            {
+                stage.Setup = "";
+            }
+
+            if (int.TryParse(stage.Hotlap, out _) == false || (int.Parse(stage.Hotlap) != 0 && int.Parse(stage.Hotlap) != 1))
+            {
+                stage.Hotlap = "";
+            }
+
+            if (int.TryParse(stage.Servicetime, out _) == false || int.Parse(stage.Servicetime) < 0)
+            {
+                stage.Servicetime = "";
+            }
+
+            if (int.TryParse(stage.Mechanics, out _) == false || (int.Parse(stage.Mechanics) < 1 || int.Parse(stage.Mechanics) > 6))
+            {
+                stage.Mechanics = "";
+            }
+
+            if (String.Equals(stage.Skill, "inexperienced", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Skill, "proficient", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Skill, "competent", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Skill, "skilled", StringComparison.OrdinalIgnoreCase) == false &&
+                String.Equals(stage.Skill, "expert", StringComparison.OrdinalIgnoreCase) == false)
+            {
+                stage.Skill = "";
+            }
+
+            if (int.TryParse(stage.Stagenn, out _) == false)
+            {
+                stage.Stagenn = "10";
+            }
+        }
+
         public string getFilePath(string filename) // Retrieves the path of the SRP given the filename.
         {
             string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -499,7 +597,9 @@ namespace SRP_Rallies_Manager
         {
             using (StreamWriter writer = File.CreateText(filepath))
             {
-                writer.Write("");
+                string specs = "# Legend:@n#@n# All tags and keywords are case-insensitive.@n# All tags except 'stage' and 'service' are sticky, which means that once set@n# their values remain the same for the stages following.@n# Keywords may be specified only partially as long as they are unique.@n# For example, tyres may be specified as 'gr dr' for Gravel Dry or 'dr gr' or@n# 'd g'.@n# You may use the numbers but these are much more harder to remember.@n#@n#@n# Tag           Partial             Full                    Number@n# --------------------------------------------------------------------------@n# weather       g                   Good                    0@n#               r                   Random                  1@n#               b                   Bad                     2@n#@n#@n# tyres         t d                 Tarmac Dry              0@n#               d t                 Tarmac Dry              0@n#@n#               t i                 Tarmac Intermediate     1@n#               i t                 Tarmac Intermediate     1@n#@n#               t w                 Tarmac Wet              2@n#               w t                 Tarmac Wet              2@n#@n#               g d                 Gravel Dry              3@n#               d g                 Gravel Dry              3@n#@n#               g i                 Gravel Intermediate     4@n#               i g                 Gravel Intermediate     4@n#@n#               g w                 Gravel Wet              5@n#               w g                 Gravel Wet              5@n#@n#               s                   Snow                    6@n#@n#@n#@n# conditions    -1=Reset previously defined value, use default.@n#               c                   crisp                   0@n#               ha                  hazy                    1@n#               nor                 norain                  2@n#               lightr              lightrain               3@n#               heavyr              heavyrain               4@n#               nos                 nosnow                  5@n#               lights              lightsnow               6@n#               heavys              heavysnow               7@n#               lightf              lightfog                8@n#               heavyf              heavyfog                9@n#@n#@n# sky           -1=Reset previously defined value, use default.@n#               c                   clear                   0@n#               p                   partcloud               1@n#               l                   lightcloud              2@n#               h                   heavycloud              3@n#@n#@n# timeOfDay     -1=Reset previously defined value, use default.@n#               m                   morning                 0@n#               n                   noon                    1@n#               e                   evening                 2@n#@n#@n# surface       -1=Reset previously defined value, use default.@n#               dr                  dry                     0@n#               da                  damp                    1@n#               w                   wet                     2@n#@n#@n# track         -1=Reset previously defined value, use default.@n#               ne                  new                     0@n#               no                  normal                  1@n#               w                   worn                    2@n#@n#@n# setup        -3=Use last setup chosen by user (menu-choice)@n#              -2=Default Setup@n#              -1=Current Setup@n#               0=Use setup in slot 0@n#               1=Use setup in slot 1@n#               2=Use setup in slot 2@n#               n=Use setup in slot <n>@n#@n#@n# hotlap        0=No hotlap@n#               1=special hotlap 'rally' stage@n#               If set to '1', the rally definition is being treated as a@n#               hotlap. This means that only one stage is included in the@n#               stage list and can be run as a hotlap.@n#               All other stage definitions in the rally config file, if@n#               present, are ignored.@n#@n#@n# service nn    nn=service park time in minutes after the stage@n#               Service park settings are ignored for hotlap rallies.@n# @n#@n# mechanics n   n=number of mechanics in the service park in the range 1..6@n#@n#@n# skill         skill level of the mechanics in the service park@n#               i                   inexperienced           1@n#               p                   proficient              2@n#               c                   competent               3@n#               s                   skilled                 4@n#               e                   expert                  5@n#               @n#@n#@n# stage nn label@n#         nn=Number of the stage.@n#         label=Optional label used as stage name for identification purposes.@n#         Everything after the stage number up to the end-of-line or a comment@n#         character (#) is treated as the label.@n#         The comparison used in computing the best time diffs based on this@n#         label is case-insensitive.@n#         Anyway the label is displayed as specified.@n#         If no label is specified (the default) the built-in stage name is@n#         being used as the label.@n#@n@n";
+                specs = specs.Replace("@n", "\n");
+                writer.Write(specs);
 
                 for (int i = 0; i < totalstagenumber; i++)
                 {

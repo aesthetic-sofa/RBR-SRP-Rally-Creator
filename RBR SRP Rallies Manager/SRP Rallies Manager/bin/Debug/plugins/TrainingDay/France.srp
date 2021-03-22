@@ -1,0 +1,151 @@
+# Legend:
+#
+# All tags and keywords are case-insensitive.
+# All tags except 'stage' and 'service' are sticky, which means that once set
+# their values remain the same for the stages following.
+# Keywords may be specified only partially as long as they are unique.
+# For example, tyres may be specified as 'gr dr' for Gravel Dry or 'dr gr' or
+# 'd g'.
+# You may use the numbers but these are much more harder to remember.
+#
+#
+# Tag           Partial             Full                    Number
+# --------------------------------------------------------------------------
+# weather       d                   Dry                     0
+#               r                   Random                  1
+#               b                   Bad                     2
+#
+#
+# tyres         t d                 Tarmac Dry              0
+#               d t                 Tarmac Dry              0
+#
+#               t i                 Tarmac Intermediate     1
+#               i t                 Tarmac Intermediate     1
+#
+#               t w                 Tarmac Wet              2
+#               w t                 Tarmac Wet              2
+#
+#               g d                 Gravel Dry              3
+#               d g                 Gravel Dry              3
+#
+#               g i                 Gravel Intermediate     4
+#               i g                 Gravel Intermediate     4
+#
+#               g w                 Gravel Wet              5
+#               w g                 Gravel Wet              5
+#
+#               s                   Snow                    6
+#
+#
+#
+# conditions    -1=Reset previously defined value, use default.
+#               c                   crisp                   0
+#               ha                  hazy                    1
+#               nor                 norain                  2
+#               lightr              lightrain               3
+#               heavyr              heavyrain               4
+#               nos                 nosnow                  5
+#               lights              lightsnow               6
+#               heavys              heavysnow               7
+#               lightf              lightfog                8
+#               heavyf              heavyfog                9
+#
+#
+# sky           -1=Reset previously defined value, use default.
+#               c                   clear                   0
+#               p                   partcloud               1
+#               l                   lightcloud              2
+#               h                   heavycloud              3
+#
+#
+# timeOfDay     -1=Reset previously defined value, use default.
+#               m                   morning                 0
+#               n                   noon                    1
+#               e                   evening                 2
+#
+#
+# surface       -1=Reset previously defined value, use default.
+#               dr                  dry                     0
+#               da                  damp                    1
+#               w                   wet                     2
+#
+#
+# track         -1=Reset previously defined value, use default.
+#               ne                  new                     0
+#               no                  normal                  1
+#               w                   worn                    2
+#
+#
+# setup        -3=Use last setup chosen by user (menu-choice)
+#              -2=Default Setup
+#              -1=Current Setup
+#               0=Use setup in slot 0
+#               1=Use setup in slot 1
+#               2=Use setup in slot 2
+#               n=Use setup in slot <n>
+#
+#
+# hotlap        0=No hotlap
+#               1=special hotlap "rally" stage
+#               If set to "1", the rally definition is being treated as a
+#               hotlap. This means that only one stage is included in the
+#               stage list and can be run as a hotlap.
+#               All other stage definitions in the rally config file, if
+#               present, are ignored.
+#
+#
+# service nn    nn=service park time in minutes after the stage
+#               Service park settings are ignored for hotlap rallies.
+# 
+#
+# mechanics n   n=number of mechanics in the service park in the range 1..6
+#
+#
+# skill         skill level of the mechanics in the service park
+#               i                   inexperienced           1
+#               p                   proficient              2
+#               c                   competent               3
+#               s                   skilled                 4
+#               e                   expert                  5
+#               
+#
+#
+# stage nn label
+#         nn=Number of the stage.
+#         label=Optional label used as stage name for identification purposes.
+#         Everything after the stage number up to the end-of-line or a comment
+#         character (#) is treated as the label.
+#         The comparison used in computing the best time diffs based on this
+#         label is case-insensitive.
+#         Anyway the label is displayed as specified.
+#         If no label is specified (the default) the built-in stage name is
+#         being used as the label.
+#
+
+# Standard Rally France
+
+weather d # Dry
+tyres dr tar # Tarmac Dry
+
+mechanics 2
+skill comp
+service 20
+stage 41 # Cote D'Arbroz
+
+stage 42 # Joux Verte
+
+mechanics 4
+service 40
+stage 43 # Bisanne
+
+service 10
+stage 44 # Joux Plane
+
+mechanics 6
+service 60
+stage 45 # Joux Verte II
+
+stage 46 # Cote D'Arbroz II
+
+
+

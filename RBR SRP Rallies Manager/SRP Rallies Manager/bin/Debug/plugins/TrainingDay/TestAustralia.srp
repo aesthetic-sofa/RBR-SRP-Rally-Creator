@@ -11,7 +11,7 @@
 #
 # Tag           Partial             Full                    Number
 # --------------------------------------------------------------------------
-# weather       d                   Dry                     0
+# weather       g                   Good                    0
 #               r                   Random                  1
 #               b                   Bad                     2
 #
@@ -86,8 +86,8 @@
 #
 #
 # hotlap        0=No hotlap
-#               1=special hotlap "rally" stage
-#               If set to "1", the rally definition is being treated as a
+#               1=special hotlap 'rally' stage
+#               If set to '1', the rally definition is being treated as a
 #               hotlap. This means that only one stage is included in the
 #               stage list and can be run as a hotlap.
 #               All other stage definitions in the rally config file, if
@@ -122,29 +122,30 @@
 #         being used as the label.
 #
 
-# Standard Rally Australia
-
-weather d # Dry
-tyres g d # Gravel Dry
-
-mechanics 2
-skill comp
-
+##### SS1 #####
 service 20
-stage 31  # NewBobs
+mechanics 2
+skill competent
+weather good
+tyres gravel dry
+stage 31 
 
-stage 32  # Greenhills
+##### SS2 #####
+stage 32 
 
-mechanics 4
+##### SS3 #####
 service 40
-stage 33  # Mineshaft
+mechanics 4
+stage 33 
 
-stage 34  # East-West
+##### SS4 #####
+stage 34 
 
-mechanics 6
+##### SS5 #####
 service 60
-stage 35  # NewBobs II
+mechanics 6
+stage 35 
 
-stage 36  # East-West II
+##### SS6 #####
+stage 36 
 
-

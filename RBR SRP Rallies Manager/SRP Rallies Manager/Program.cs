@@ -23,29 +23,28 @@ namespace SRP_Rallies_Manager
 
             // TEST START
             SRP srp = new SRP();
-            int stagenumber = srp.CountStages("TestFullSeason.srp");
+            int stagenumber = srp.CountStages(srp.getFilePath("France.srp"));
             List<stage> stages = new List<stage>();
 
-            stages = srp.ReadSRP(stages, "TestFullSeason.srp");
+            stages = srp.ReadSRP(stages, srp.getFilePath("France.srp"));
             stages = srp.RallyPartialToFull(stages, stagenumber);
-            srp.WriteSRP(stages, stagenumber, "SelfTestFullSeason.srp");
+            srp.WriteSRP(stages, stagenumber, srp.getFilePath("TestFrance.srp"));
             stages.Clear();
 
-            List<stage> stages2 = new List<stage>();
-            int stagenumber2 = srp.CountStages("Australia.srp");
+            int stagenumber2 = srp.CountStages(srp.getFilePath("Australia.srp"));
 
-            stages2 = srp.ReadSRP(stages, "Australia.srp");
-            stages2 = srp.RallyPartialToFull(stages2, stagenumber2);
-            srp.WriteSRP(stages2, stagenumber2, "TestAustralia.srp");
-            stages2.Clear();
+            stages = srp.ReadSRP(stages, srp.getFilePath("Australia.srp"));
+            stages = srp.RallyPartialToFull(stages, stagenumber2);
+            srp.WriteSRP(stages, stagenumber2, srp.getFilePath("TestAustralia.srp"));
+            stages.Clear();
 
-            List<stage> stages3 = new List<stage>();
-            int stagenumber3 = srp.CountStages("Great Britain.srp");
 
-            stages3 = srp.ReadSRP(stages, "Great Britain.srp");
-            stages3 = srp.RallyPartialToFull(stages3, stagenumber3);
-            srp.WriteSRP(stages3, stagenumber3, "TestGreatBritain.srp");
-            stages3.Clear();
+            int stagenumber3 = srp.CountStages(srp.getFilePath("Great Britain.srp"));
+
+            stages = srp.ReadSRP(stages, srp.getFilePath("Great Britain.srp"));
+            stages = srp.RallyPartialToFull(stages, stagenumber3);
+            srp.WriteSRP(stages, stagenumber3, srp.getFilePath("TestGreatBritain.srp"));
+            stages.Clear();
 
             CSV csv = new CSV();
             List<ValidCombo> tracklist = new List<ValidCombo>();

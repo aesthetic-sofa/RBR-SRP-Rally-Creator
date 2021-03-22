@@ -11,7 +11,7 @@
 #
 # Tag           Partial             Full                    Number
 # --------------------------------------------------------------------------
-# weather       d                   Dry                     0
+# weather       g                   Good                    0
 #               r                   Random                  1
 #               b                   Bad                     2
 #
@@ -86,8 +86,8 @@
 #
 #
 # hotlap        0=No hotlap
-#               1=special hotlap "rally" stage
-#               If set to "1", the rally definition is being treated as a
+#               1=special hotlap 'rally' stage
+#               If set to '1', the rally definition is being treated as a
 #               hotlap. This means that only one stage is included in the
 #               stage list and can be run as a hotlap.
 #               All other stage definitions in the rally config file, if
@@ -122,30 +122,31 @@
 #         being used as the label.
 #
 
-# Standard Rally France
-
-weather d # Dry
-tyres t d # Tarmac Dry
-
-mechanics 2
-skill comp
+##### SS1 #####
 service 20
-stage 41 # Cote D'Arbroz
+mechanics 2
+skill competent
+weather good
+tyres tarmac dry
+stage 41 
 
-stage 42 # Joux Verte
+##### SS2 #####
+stage 42 
 
-mechanics 4
+##### SS3 #####
 service 40
-stage 43 # Bisanne
+mechanics 4
+stage 43 
 
+##### SS4 #####
 service 10
-stage 44 # Joux Plane
+stage 44 
 
-mechanics 6
+##### SS5 #####
 service 60
-stage 45 # Joux Verte II
+mechanics 6
+stage 45 
 
-stage 46 # Cote D'Arbroz II
+##### SS6 #####
+stage 46 
 
-
-
