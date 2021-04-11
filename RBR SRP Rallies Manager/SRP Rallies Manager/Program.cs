@@ -17,11 +17,16 @@ namespace SRP_Rallies_Manager
         [STAThread]
         static void Main()
         {
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            // TEST START
+
+
+            // TEST WITH NO GUI - START
+            /*
             SRP srp = new SRP();
             int stagenumber = srp.CountStages(srp.getFilePath("France.srp"));
             List<stage> stages = new List<stage>();
@@ -50,8 +55,8 @@ namespace SRP_Rallies_Manager
             List<ValidCombo> tracklist = new List<ValidCombo>();
             tracklist=csv.ReadCSV();
             csv.writeCSV(tracklist, "test.csv");
-            // TEST END
-
+            */
+            // TEST WITH NO GUI - END
         }
     }
 }

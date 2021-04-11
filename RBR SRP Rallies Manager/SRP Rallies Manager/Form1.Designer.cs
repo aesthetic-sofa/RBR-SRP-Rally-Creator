@@ -66,10 +66,17 @@
             this.serviceTimeComboBox = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.mechanicsComboBox = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.skillComboBox = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.numberOfStages = new System.Windows.Forms.Label();
+            this.browseButton = new System.Windows.Forms.Button();
+            this.fileURLTextBox = new System.Windows.Forms.TextBox();
+            this.saveRallyButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.availableStagesGrid = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.availableStagesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -121,6 +128,10 @@
             this.tableLayoutPanel1.Controls.Add(this.skillComboBox, 3, 19);
             this.tableLayoutPanel1.Controls.Add(this.label17, 2, 19);
             this.tableLayoutPanel1.Controls.Add(this.numberOfStages, 1, 20);
+            this.tableLayoutPanel1.Controls.Add(this.browseButton, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.fileURLTextBox, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.saveRallyButton, 5, 20);
+            this.tableLayoutPanel1.Controls.Add(this.availableStagesGrid, 0, 20);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -145,8 +156,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.753521F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.753521F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.753521F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.401409F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.14789F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.105634F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.44366F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.518925F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(958, 568);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -160,6 +171,7 @@
             this.updateTrackList.TabIndex = 2;
             this.updateTrackList.Text = "Update Track List";
             this.updateTrackList.UseVisualStyleBackColor = true;
+            this.updateTrackList.Click += new System.EventHandler(this.updateTrackList_Click);
             // 
             // label1
             // 
@@ -246,6 +258,7 @@
             // 
             this.availableStages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.availableStages.FormattingEnabled = true;
+            this.availableStages.HorizontalScrollbar = true;
             this.availableStages.Location = new System.Drawing.Point(3, 46);
             this.availableStages.Name = "availableStages";
             this.tableLayoutPanel1.SetRowSpan(this.availableStages, 18);
@@ -512,6 +525,15 @@
             this.mechanicsComboBox.Size = new System.Drawing.Size(173, 21);
             this.mechanicsComboBox.TabIndex = 38;
             // 
+            // skillComboBox
+            // 
+            this.skillComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.skillComboBox.FormattingEnabled = true;
+            this.skillComboBox.Location = new System.Drawing.Point(417, 405);
+            this.skillComboBox.Name = "skillComboBox";
+            this.skillComboBox.Size = new System.Drawing.Size(173, 21);
+            this.skillComboBox.TabIndex = 40;
+            // 
             // label17
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -522,15 +544,6 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "Skill";
             // 
-            // skillComboBox
-            // 
-            this.skillComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.skillComboBox.FormattingEnabled = true;
-            this.skillComboBox.Location = new System.Drawing.Point(417, 405);
-            this.skillComboBox.Name = "skillComboBox";
-            this.skillComboBox.Size = new System.Drawing.Size(173, 21);
-            this.skillComboBox.TabIndex = 40;
-            // 
             // numberOfStages
             // 
             this.numberOfStages.AutoSize = true;
@@ -540,6 +553,56 @@
             this.numberOfStages.TabIndex = 41;
             this.numberOfStages.Text = "Number of Stages";
             // 
+            // browseButton
+            // 
+            this.browseButton.Location = new System.Drawing.Point(757, 3);
+            this.browseButton.Name = "browseButton";
+            this.browseButton.Size = new System.Drawing.Size(198, 22);
+            this.browseButton.TabIndex = 42;
+            this.browseButton.Text = "Edit Existing Rally (Browse for File)";
+            this.browseButton.UseVisualStyleBackColor = true;
+            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
+            // 
+            // fileURLTextBox
+            // 
+            this.fileURLTextBox.Location = new System.Drawing.Point(417, 3);
+            this.fileURLTextBox.Name = "fileURLTextBox";
+            this.fileURLTextBox.ReadOnly = true;
+            this.fileURLTextBox.Size = new System.Drawing.Size(173, 20);
+            this.fileURLTextBox.TabIndex = 43;
+            // 
+            // saveRallyButton
+            // 
+            this.saveRallyButton.Location = new System.Drawing.Point(757, 432);
+            this.saveRallyButton.Name = "saveRallyButton";
+            this.saveRallyButton.Size = new System.Drawing.Size(198, 23);
+            this.saveRallyButton.TabIndex = 44;
+            this.saveRallyButton.Text = "Save Rally";
+            this.saveRallyButton.UseVisualStyleBackColor = true;
+            this.saveRallyButton.Click += new System.EventHandler(this.saveRallyButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "Rally|*.srp";
+            this.openFileDialog1.Title = "Open Rally";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "srp";
+            this.saveFileDialog1.FileName = "MyRally";
+            this.saveFileDialog1.Filter = "Rally|*.srp";
+            this.saveFileDialog1.Title = "Save Rally";
+            // 
+            // availableStagesGrid
+            // 
+            this.availableStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.availableStagesGrid.Location = new System.Drawing.Point(3, 432);
+            this.availableStagesGrid.Name = "availableStagesGrid";
+            this.availableStagesGrid.ReadOnly = true;
+            this.tableLayoutPanel1.SetRowSpan(this.availableStagesGrid, 3);
+            this.availableStagesGrid.Size = new System.Drawing.Size(134, 133);
+            this.availableStagesGrid.TabIndex = 45;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,9 +610,10 @@
             this.ClientSize = new System.Drawing.Size(958, 568);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "RBR SRP Rally Manager";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.availableStagesGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -597,6 +661,12 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox skillComboBox;
         private System.Windows.Forms.Label numberOfStages;
+        private System.Windows.Forms.Button browseButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox fileURLTextBox;
+        private System.Windows.Forms.Button saveRallyButton;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridView availableStagesGrid;
     }
 }
 

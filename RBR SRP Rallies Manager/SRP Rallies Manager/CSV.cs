@@ -9,6 +9,15 @@ namespace SRP_Rallies_Manager
 {
     class CSV
     {
+        public class StageNumberAndName
+        {
+            private int stageNumber;
+            private string stageName;
+
+            public int StageNumber { get => stageNumber; set => stageNumber = value; }
+            public string StageName { get => stageName; set => stageName = value; }
+        }
+
         public List<ValidCombo> ReadCSV()
         {
             List<ValidCombo> trackList = new List<ValidCombo>(); // We create a list of valid combinations.
@@ -61,6 +70,59 @@ namespace SRP_Rallies_Manager
                 }
                 writer.Close();
             }
+        }
+
+        public List<StageNumberAndName> GenerateAvailableStagesGrid(List<ValidCombo> trackList)
+        {
+            List<StageNumberAndName> UniqueAvailableStagesList = new List<StageNumberAndName>();
+
+            List<StageNumberAndName> AvailableStagesList = new List<StageNumberAndName>();
+
+            int j = 0;
+            foreach (ValidCombo combo in trackList)
+            {
+                //tempstagenumandname.StageNumber = combo.StageNumber;
+                //tempstagenumandname.StageName = combo.StageName;
+
+                AvailableStagesList.Add(new StageNumberAndName());
+                AvailableStagesList[j].StageNumber= combo.StageNumber;
+                AvailableStagesList[j].StageName = combo.StageName;
+                j++;
+            }
+
+            UniqueAvailableStagesList = AvailableStagesList.Distinct().ToList();
+
+
+            //DEBUG HERE
+            /*
+            using (StreamWriter writer = File.CreateText("UniqueAvailableStagesList.check"))
+            {
+                for (int i = 0; i < UniqueAvailableStagesList.Count; ++i)
+                {
+                    writer.WriteLine(UniqueAvailableStagesList[i].StageNumber + " " + UniqueAvailableStagesList[i].StageName);
+                }
+                writer.Close();
+            }
+            */
+            //DEBUG END
+
+            return UniqueAvailableStagesList;
+        }
+
+        public List<string> GenerateAvailableStagesList(List<ValidCombo> trackList)
+        {
+            List<string> UniqueAvailableStagesList = new List<string>();
+
+            List<string> AvailableStagesList = new List<string>();
+
+            foreach (ValidCombo combo in trackList)
+            {
+                    AvailableStagesList.Add(combo.StageNumber + "\t" + combo.StageName);
+            }
+
+            UniqueAvailableStagesList = AvailableStagesList.Distinct().ToList();
+
+            return UniqueAvailableStagesList;
         }
 
         public List<string> GenerateValidConditionsList (int stageNumber, List<ValidCombo> trackList)
