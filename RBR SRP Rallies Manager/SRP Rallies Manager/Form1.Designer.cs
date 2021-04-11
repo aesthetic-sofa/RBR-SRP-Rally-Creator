@@ -72,9 +72,9 @@
             this.browseButton = new System.Windows.Forms.Button();
             this.fileURLTextBox = new System.Windows.Forms.TextBox();
             this.saveRallyButton = new System.Windows.Forms.Button();
+            this.availableStagesGrid = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.availableStagesGrid = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.availableStagesGrid)).BeginInit();
             this.SuspendLayout();
@@ -581,6 +581,22 @@
             this.saveRallyButton.UseVisualStyleBackColor = true;
             this.saveRallyButton.Click += new System.EventHandler(this.saveRallyButton_Click);
             // 
+            // availableStagesGrid
+            // 
+            this.availableStagesGrid.AllowUserToAddRows = false;
+            this.availableStagesGrid.AllowUserToDeleteRows = false;
+            this.availableStagesGrid.AllowUserToOrderColumns = true;
+            this.availableStagesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.availableStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.availableStagesGrid.ColumnHeadersVisible = false;
+            this.availableStagesGrid.Location = new System.Drawing.Point(3, 432);
+            this.availableStagesGrid.Name = "availableStagesGrid";
+            this.availableStagesGrid.ReadOnly = true;
+            this.availableStagesGrid.RowHeadersVisible = false;
+            this.tableLayoutPanel1.SetRowSpan(this.availableStagesGrid, 3);
+            this.availableStagesGrid.Size = new System.Drawing.Size(134, 133);
+            this.availableStagesGrid.TabIndex = 45;
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.Filter = "Rally|*.srp";
@@ -592,16 +608,6 @@
             this.saveFileDialog1.FileName = "MyRally";
             this.saveFileDialog1.Filter = "Rally|*.srp";
             this.saveFileDialog1.Title = "Save Rally";
-            // 
-            // availableStagesGrid
-            // 
-            this.availableStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.availableStagesGrid.Location = new System.Drawing.Point(3, 432);
-            this.availableStagesGrid.Name = "availableStagesGrid";
-            this.availableStagesGrid.ReadOnly = true;
-            this.tableLayoutPanel1.SetRowSpan(this.availableStagesGrid, 3);
-            this.availableStagesGrid.Size = new System.Drawing.Size(134, 133);
-            this.availableStagesGrid.TabIndex = 45;
             // 
             // Form1
             // 

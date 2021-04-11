@@ -9,13 +9,30 @@ namespace SRP_Rallies_Manager
 {
     class CSV
     {
-        public class StageNumberAndName
+        public class StageNumberAndName : IEquatable<StageNumberAndName>
         {
             private int stageNumber;
             private string stageName;
 
             public int StageNumber { get => stageNumber; set => stageNumber = value; }
             public string StageName { get => stageName; set => stageName = value; }
+
+            public bool Equals(StageNumberAndName other)
+            {
+                if (StageNumber == other.StageNumber && StageName == other.StageName)
+                    return true;
+
+                return false;
+            }
+
+            public override int GetHashCode()
+            {
+                int hashStageName = StageName == null ? 0 : StageName.GetHashCode();
+                int hashStageNumber = StageNumber == 0 ? 0 : StageNumber.GetHashCode();
+
+                return hashStageName ^ hashStageNumber;
+            }
+
         }
 
         public List<ValidCombo> ReadCSV()
@@ -35,7 +52,8 @@ namespace SRP_Rallies_Manager
 
                 string[] words = line.Split(';'); // We split each line in a string vector.
 
-                if (words[1] == "invalid stage" || words[0] == "Stage Number")
+
+                if (words[0] == "" || words[0] == "Stage Number" || words[1] == "invalid stage")
                 {
                     continue;
                 }
