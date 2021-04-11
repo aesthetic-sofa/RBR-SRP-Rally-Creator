@@ -34,3 +34,4 @@ C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\
 C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.csproj.CoreCompileInputs.cache
 C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.exe
 C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP Rallies Manager.pdb
+C:\Users\Lorenzo\Documents\GitHub\RBR-SRP-Rally-Creator\RBR SRP Rallies Manager\SRP Rallies Manager\obj\Debug\SRP_Rallies_Manager.Form1.resources
