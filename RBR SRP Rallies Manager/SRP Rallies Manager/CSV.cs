@@ -104,9 +104,6 @@ namespace SRP_Rallies_Manager
             int j = 0;
             foreach (ValidCombo combo in trackList)
             {
-                //tempstagenumandname.StageNumber = combo.StageNumber;
-                //tempstagenumandname.StageName = combo.StageName;
-
                 AvailableStagesList.Add(new StageNumberAndName());
                 AvailableStagesList[j].StageNumber= combo.StageNumber;
                 AvailableStagesList[j].StageName = combo.StageName;
@@ -132,7 +129,7 @@ namespace SRP_Rallies_Manager
             return UniqueAvailableStagesList;
         }
 
-        public List<string> GenerateAvailableStagesList(List<ValidCombo> trackList)
+        public List<string> GenerateAvailableStagesList(List<ValidCombo> trackList) //DEPRECATED!
         {
             List<string> UniqueAvailableStagesList = new List<string>();
 
@@ -146,6 +143,22 @@ namespace SRP_Rallies_Manager
             UniqueAvailableStagesList = AvailableStagesList.Distinct().ToList();
 
             return UniqueAvailableStagesList;
+        }
+
+        public List<StageNumberAndName> SortStagesByName(List<StageNumberAndName> availableStages)
+        {
+            List<StageNumberAndName> sorted = new List<StageNumberAndName>();
+            sorted = availableStages.OrderBy(x => x.StageName).ToList();
+
+            return sorted;
+        }
+
+        public List<StageNumberAndName> SortStagesByNumber(List<StageNumberAndName> availableStages)
+        {
+            List<StageNumberAndName> sorted = new List<StageNumberAndName>();
+            sorted = availableStages.OrderBy(x => x.StageNumber).ToList();
+
+            return sorted;
         }
 
         public List<string> GenerateValidConditionsList (int stageNumber, List<ValidCombo> trackList)

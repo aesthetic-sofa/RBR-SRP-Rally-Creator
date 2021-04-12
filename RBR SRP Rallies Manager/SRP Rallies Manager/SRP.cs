@@ -593,6 +593,12 @@ namespace SRP_Rallies_Manager
             return stages;
         }
 
+        public List<stage> RallyNumberToFull(List<stage> stages, int totalstagenumber) // Translates a whole rally (SRP) from partial to full notation.
+        {
+            for (int i = 0; i < totalstagenumber; i++) NumberToFull(stages[i]);
+            return stages;
+        }
+
         public void WriteSRP(List<stage> stages, int totalstagenumber, string filepath)
         {
             using (StreamWriter writer = File.CreateText(filepath))

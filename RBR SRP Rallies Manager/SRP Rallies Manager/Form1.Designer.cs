@@ -35,10 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dividerLine01 = new System.Windows.Forms.Label();
             this.createNewRally = new System.Windows.Forms.Button();
-            this.chosenStages = new System.Windows.Forms.ListBox();
             this.basicStageInfo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.availableStages = new System.Windows.Forms.ListBox();
             this.hotlapCheckBox = new System.Windows.Forms.CheckBox();
             this.dividerLine02 = new System.Windows.Forms.Label();
             this.dividerLine03 = new System.Windows.Forms.Label();
@@ -68,22 +66,34 @@
             this.mechanicsComboBox = new System.Windows.Forms.ComboBox();
             this.skillComboBox = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.numberOfStages = new System.Windows.Forms.Label();
             this.browseButton = new System.Windows.Forms.Button();
             this.fileURLTextBox = new System.Windows.Forms.TextBox();
             this.saveRallyButton = new System.Windows.Forms.Button();
             this.availableStagesGrid = new System.Windows.Forms.DataGridView();
+            this.numberOfStages = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.sortByName = new System.Windows.Forms.Button();
+            this.sortByNumber = new System.Windows.Forms.Button();
+            this.moveToChosen = new System.Windows.Forms.Button();
+            this.chosenStagesGrid = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.deleteFromChosen = new System.Windows.Forms.Button();
+            this.moveUp = new System.Windows.Forms.Button();
+            this.moveDown = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.availableStagesGrid)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chosenStagesGrid)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.6268F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.08948F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.1357F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.55324F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.55154F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.72271F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.83998F));
@@ -94,10 +104,8 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.dividerLine01, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.createNewRally, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chosenStages, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.basicStageInfo, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.availableStages, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.hotlapCheckBox, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.dividerLine02, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.dividerLine03, 2, 5);
@@ -127,11 +135,15 @@
             this.tableLayoutPanel1.Controls.Add(this.mechanicsComboBox, 3, 18);
             this.tableLayoutPanel1.Controls.Add(this.skillComboBox, 3, 19);
             this.tableLayoutPanel1.Controls.Add(this.label17, 2, 19);
-            this.tableLayoutPanel1.Controls.Add(this.numberOfStages, 1, 20);
             this.tableLayoutPanel1.Controls.Add(this.browseButton, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.fileURLTextBox, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.saveRallyButton, 5, 20);
-            this.tableLayoutPanel1.Controls.Add(this.availableStagesGrid, 0, 20);
+            this.tableLayoutPanel1.Controls.Add(this.availableStagesGrid, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 21);
+            this.tableLayoutPanel1.Controls.Add(this.moveToChosen, 0, 20);
+            this.tableLayoutPanel1.Controls.Add(this.numberOfStages, 1, 21);
+            this.tableLayoutPanel1.Controls.Add(this.chosenStagesGrid, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 20);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -186,7 +198,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 28);
+            this.label2.Location = new System.Drawing.Point(148, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 4;
@@ -221,16 +233,6 @@
             this.createNewRally.Text = "Create New Rally";
             this.createNewRally.UseVisualStyleBackColor = true;
             // 
-            // chosenStages
-            // 
-            this.chosenStages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chosenStages.FormattingEnabled = true;
-            this.chosenStages.Location = new System.Drawing.Point(143, 46);
-            this.chosenStages.Name = "chosenStages";
-            this.tableLayoutPanel1.SetRowSpan(this.chosenStages, 18);
-            this.chosenStages.Size = new System.Drawing.Size(148, 380);
-            this.chosenStages.TabIndex = 1;
-            // 
             // basicStageInfo
             // 
             this.basicStageInfo.AutoSize = true;
@@ -253,17 +255,6 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Custom Label:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // availableStages
-            // 
-            this.availableStages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.availableStages.FormattingEnabled = true;
-            this.availableStages.HorizontalScrollbar = true;
-            this.availableStages.Location = new System.Drawing.Point(3, 46);
-            this.availableStages.Name = "availableStages";
-            this.tableLayoutPanel1.SetRowSpan(this.availableStages, 18);
-            this.availableStages.Size = new System.Drawing.Size(134, 380);
-            this.availableStages.TabIndex = 11;
             // 
             // hotlapCheckBox
             // 
@@ -544,15 +535,6 @@
             this.label17.TabIndex = 39;
             this.label17.Text = "Skill";
             // 
-            // numberOfStages
-            // 
-            this.numberOfStages.AutoSize = true;
-            this.numberOfStages.Location = new System.Drawing.Point(143, 429);
-            this.numberOfStages.Name = "numberOfStages";
-            this.numberOfStages.Size = new System.Drawing.Size(92, 13);
-            this.numberOfStages.TabIndex = 41;
-            this.numberOfStages.Text = "Number of Stages";
-            // 
             // browseButton
             // 
             this.browseButton.Location = new System.Drawing.Point(757, 3);
@@ -588,17 +570,26 @@
             this.availableStagesGrid.AllowUserToResizeRows = false;
             this.availableStagesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.availableStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.availableStagesGrid.ColumnHeadersVisible = false;
-            this.availableStagesGrid.Location = new System.Drawing.Point(3, 432);
+            this.availableStagesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.availableStagesGrid.Location = new System.Drawing.Point(3, 46);
             this.availableStagesGrid.MultiSelect = false;
             this.availableStagesGrid.Name = "availableStagesGrid";
             this.availableStagesGrid.ReadOnly = true;
             this.availableStagesGrid.RowHeadersVisible = false;
-            this.tableLayoutPanel1.SetRowSpan(this.availableStagesGrid, 3);
+            this.tableLayoutPanel1.SetRowSpan(this.availableStagesGrid, 18);
             this.availableStagesGrid.RowTemplate.Height = 15;
             this.availableStagesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.availableStagesGrid.Size = new System.Drawing.Size(134, 133);
+            this.availableStagesGrid.Size = new System.Drawing.Size(139, 380);
             this.availableStagesGrid.TabIndex = 45;
+            // 
+            // numberOfStages
+            // 
+            this.numberOfStages.AutoSize = true;
+            this.numberOfStages.Location = new System.Drawing.Point(148, 458);
+            this.numberOfStages.Name = "numberOfStages";
+            this.numberOfStages.Size = new System.Drawing.Size(92, 13);
+            this.numberOfStages.TabIndex = 41;
+            this.numberOfStages.Text = "Number of Stages";
             // 
             // openFileDialog1
             // 
@@ -612,6 +603,104 @@
             this.saveFileDialog1.Filter = "Rally|*.srp";
             this.saveFileDialog1.Title = "Save Rally";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.sortByNumber);
+            this.panel1.Controls.Add(this.sortByName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 461);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(139, 59);
+            this.panel1.TabIndex = 46;
+            // 
+            // sortByName
+            // 
+            this.sortByName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sortByName.Location = new System.Drawing.Point(0, 0);
+            this.sortByName.Name = "sortByName";
+            this.sortByName.Size = new System.Drawing.Size(139, 30);
+            this.sortByName.TabIndex = 0;
+            this.sortByName.Text = "Sort by Name";
+            this.sortByName.UseVisualStyleBackColor = true;
+            this.sortByName.Click += new System.EventHandler(this.sortByName_Click);
+            // 
+            // sortByNumber
+            // 
+            this.sortByNumber.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.sortByNumber.Location = new System.Drawing.Point(0, 29);
+            this.sortByNumber.Name = "sortByNumber";
+            this.sortByNumber.Size = new System.Drawing.Size(139, 30);
+            this.sortByNumber.TabIndex = 1;
+            this.sortByNumber.Text = "Sort By Number";
+            this.sortByNumber.UseVisualStyleBackColor = true;
+            this.sortByNumber.Click += new System.EventHandler(this.sortByNumber_Click);
+            // 
+            // moveToChosen
+            // 
+            this.moveToChosen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.moveToChosen.Location = new System.Drawing.Point(3, 432);
+            this.moveToChosen.Name = "moveToChosen";
+            this.moveToChosen.Size = new System.Drawing.Size(139, 23);
+            this.moveToChosen.TabIndex = 47;
+            this.moveToChosen.Text = "->";
+            this.moveToChosen.UseVisualStyleBackColor = true;
+            // 
+            // chosenStagesGrid
+            // 
+            this.chosenStagesGrid.AllowUserToAddRows = false;
+            this.chosenStagesGrid.AllowUserToDeleteRows = false;
+            this.chosenStagesGrid.AllowUserToResizeRows = false;
+            this.chosenStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.chosenStagesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chosenStagesGrid.Location = new System.Drawing.Point(148, 46);
+            this.chosenStagesGrid.MultiSelect = false;
+            this.chosenStagesGrid.Name = "chosenStagesGrid";
+            this.chosenStagesGrid.ReadOnly = true;
+            this.tableLayoutPanel1.SetRowSpan(this.chosenStagesGrid, 18);
+            this.chosenStagesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.chosenStagesGrid.Size = new System.Drawing.Size(143, 380);
+            this.chosenStagesGrid.TabIndex = 48;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.moveDown);
+            this.panel2.Controls.Add(this.moveUp);
+            this.panel2.Controls.Add(this.deleteFromChosen);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(148, 432);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(143, 23);
+            this.panel2.TabIndex = 49;
+            // 
+            // deleteFromChosen
+            // 
+            this.deleteFromChosen.Dock = System.Windows.Forms.DockStyle.Left;
+            this.deleteFromChosen.Location = new System.Drawing.Point(0, 0);
+            this.deleteFromChosen.Name = "deleteFromChosen";
+            this.deleteFromChosen.Size = new System.Drawing.Size(34, 23);
+            this.deleteFromChosen.TabIndex = 0;
+            this.deleteFromChosen.Text = "<-";
+            this.deleteFromChosen.UseVisualStyleBackColor = true;
+            // 
+            // moveUp
+            // 
+            this.moveUp.Location = new System.Drawing.Point(58, 0);
+            this.moveUp.Name = "moveUp";
+            this.moveUp.Size = new System.Drawing.Size(34, 23);
+            this.moveUp.TabIndex = 1;
+            this.moveUp.Text = "^";
+            this.moveUp.UseVisualStyleBackColor = true;
+            // 
+            // moveDown
+            // 
+            this.moveDown.Dock = System.Windows.Forms.DockStyle.Right;
+            this.moveDown.Location = new System.Drawing.Point(109, 0);
+            this.moveDown.Name = "moveDown";
+            this.moveDown.Size = new System.Drawing.Size(34, 23);
+            this.moveDown.TabIndex = 2;
+            this.moveDown.Text = "v";
+            this.moveDown.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,6 +712,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.availableStagesGrid)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chosenStagesGrid)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -630,7 +722,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ListBox chosenStages;
         private System.Windows.Forms.Button updateTrackList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -639,7 +730,6 @@
         private System.Windows.Forms.Button createNewRally;
         private System.Windows.Forms.Label basicStageInfo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox availableStages;
         private System.Windows.Forms.CheckBox hotlapCheckBox;
         private System.Windows.Forms.Label dividerLine02;
         private System.Windows.Forms.Label dividerLine03;
@@ -676,6 +766,15 @@
         private System.Windows.Forms.Button saveRallyButton;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.DataGridView availableStagesGrid;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button sortByNumber;
+        private System.Windows.Forms.Button sortByName;
+        private System.Windows.Forms.Button moveToChosen;
+        private System.Windows.Forms.DataGridView chosenStagesGrid;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button deleteFromChosen;
+        private System.Windows.Forms.Button moveDown;
+        private System.Windows.Forms.Button moveUp;
     }
 }
 
