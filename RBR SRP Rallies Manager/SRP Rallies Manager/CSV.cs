@@ -35,6 +35,7 @@ namespace SRP_Rallies_Manager
 
         }
 
+
         public List<ValidCombo> ReadCSV()
         {
             List<ValidCombo> trackList = new List<ValidCombo>(); // We create a list of valid combinations.
@@ -43,12 +44,11 @@ namespace SRP_Rallies_Manager
 
             var lines = File.ReadLines("TrackListing.csv"); // We read the file.
 
-            ValidCombo combo = new ValidCombo();
-
-            trackList.Insert(i, combo);
 
             foreach (var line in lines) // For each line of the file, we parse the data and fill the combos.
             {
+
+                trackList.Add(new ValidCombo());
 
                 string[] words = line.Split(';'); // We split each line in a string vector.
 
@@ -57,7 +57,7 @@ namespace SRP_Rallies_Manager
                 {
                     continue;
                 }
-
+                
                 trackList[i].StageNumber = Int32.Parse(words[0]);
                 trackList[i].StageName = words[1];
                 trackList[i].TintSet = words[2];
@@ -67,9 +67,14 @@ namespace SRP_Rallies_Manager
                 trackList[i].Surface = words[6];
                 trackList[i].Track = words[7];
 
-                trackList.Add(new ValidCombo());
+
                 i++;
 
+            }
+
+            for (i = trackList.Count()-1; i >= 0; i--) // We clean up unnecessary data.
+            {
+                if (trackList[i].StageNumber==0) trackList.RemoveAt(i);
             }
 
             return trackList;

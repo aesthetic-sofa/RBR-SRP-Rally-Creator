@@ -585,15 +585,18 @@
             // 
             this.availableStagesGrid.AllowUserToAddRows = false;
             this.availableStagesGrid.AllowUserToDeleteRows = false;
-            this.availableStagesGrid.AllowUserToOrderColumns = true;
+            this.availableStagesGrid.AllowUserToResizeRows = false;
             this.availableStagesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.availableStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.availableStagesGrid.ColumnHeadersVisible = false;
             this.availableStagesGrid.Location = new System.Drawing.Point(3, 432);
+            this.availableStagesGrid.MultiSelect = false;
             this.availableStagesGrid.Name = "availableStagesGrid";
             this.availableStagesGrid.ReadOnly = true;
             this.availableStagesGrid.RowHeadersVisible = false;
             this.tableLayoutPanel1.SetRowSpan(this.availableStagesGrid, 3);
+            this.availableStagesGrid.RowTemplate.Height = 15;
+            this.availableStagesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.availableStagesGrid.Size = new System.Drawing.Size(134, 133);
             this.availableStagesGrid.TabIndex = 45;
             // 

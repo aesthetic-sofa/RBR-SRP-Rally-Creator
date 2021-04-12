@@ -74,9 +74,10 @@ namespace SRP_Rallies_Manager
         private void updateTrackList_Click(object sender, EventArgs e)
         {
             availableStagesList = csv.ReadCSV();
-            //csv.writeCSV(availableStagesList, "testGUI.csv"); // Useful for debugging.
+            csv.writeCSV(availableStagesList, "testGUI.csv"); // Useful for debugging.
             availableStages.DataSource = csv.GenerateAvailableStagesList(availableStagesList);
             availableStagesGrid.DataSource = csv.GenerateAvailableStagesGrid(availableStagesList);
+            availableStagesGrid.AutoResizeColumns();
         }
     }
 }
