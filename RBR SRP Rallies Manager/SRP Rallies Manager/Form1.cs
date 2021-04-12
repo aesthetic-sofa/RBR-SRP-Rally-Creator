@@ -58,6 +58,8 @@ namespace SRP_Rallies_Manager
             // if a file is selected
             if (result == DialogResult.OK)
             {
+                chosenStages = new List<stage>();
+
                 // Set the selected file URL to the textbox
                 this.fileURLTextBox.Text = System.IO.Path.GetFileNameWithoutExtension(this.openFileDialog1.FileName);
 
@@ -67,7 +69,23 @@ namespace SRP_Rallies_Manager
                 chosenStages = srp.RallyNumberToFull(chosenStages, srp.CountStages(this.openFileDialog1.FileName));
 
                 chosenStagesGrid.DataSource = chosenStages;
+                numberOfStages.Text = "Number of stages:    " + chosenStages.Count();
 
+                // We only show the stage ID number, among the data in the . 
+                chosenStagesGrid.Columns[0].HeaderText = "ID";
+                chosenStagesGrid.Columns[1].Visible = false;
+                chosenStagesGrid.Columns[2].Visible = false;
+                chosenStagesGrid.Columns[3].Visible = false;
+                chosenStagesGrid.Columns[4].Visible = false;
+                chosenStagesGrid.Columns[5].Visible = false;
+                chosenStagesGrid.Columns[6].Visible = false;
+                chosenStagesGrid.Columns[7].Visible = false;
+                chosenStagesGrid.Columns[8].Visible = false;
+                chosenStagesGrid.Columns[9].Visible = false;
+                chosenStagesGrid.Columns[10].Visible = false;
+                chosenStagesGrid.Columns[11].Visible = false;
+                chosenStagesGrid.Columns[12].Visible = false;
+                chosenStagesGrid.Columns[13].Visible = false;
             }
         }
 
@@ -111,6 +129,13 @@ namespace SRP_Rallies_Manager
         {
             availableStagesList = csv.SortStagesByNumber(availableStagesList);
             availableStagesGrid.DataSource = availableStagesList;
+        }
+
+        private void createNewRally_Click(object sender, EventArgs e)
+        {
+            chosenStages = new List<stage>();
+            chosenStagesGrid.DataSource = chosenStages;
+            numberOfStages.Text = "Number of stages:    " + chosenStages.Count();
         }
     }
 }

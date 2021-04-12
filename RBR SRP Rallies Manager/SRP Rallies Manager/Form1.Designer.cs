@@ -70,18 +70,18 @@
             this.fileURLTextBox = new System.Windows.Forms.TextBox();
             this.saveRallyButton = new System.Windows.Forms.Button();
             this.availableStagesGrid = new System.Windows.Forms.DataGridView();
-            this.numberOfStages = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.sortByName = new System.Windows.Forms.Button();
             this.sortByNumber = new System.Windows.Forms.Button();
+            this.sortByName = new System.Windows.Forms.Button();
             this.moveToChosen = new System.Windows.Forms.Button();
+            this.numberOfStages = new System.Windows.Forms.Label();
             this.chosenStagesGrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.deleteFromChosen = new System.Windows.Forms.Button();
-            this.moveUp = new System.Windows.Forms.Button();
             this.moveDown = new System.Windows.Forms.Button();
+            this.moveUp = new System.Windows.Forms.Button();
+            this.deleteFromChosen = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.availableStagesGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -232,6 +232,7 @@
             this.createNewRally.TabIndex = 7;
             this.createNewRally.Text = "Create New Rally";
             this.createNewRally.UseVisualStyleBackColor = true;
+            this.createNewRally.Click += new System.EventHandler(this.createNewRally_Click);
             // 
             // basicStageInfo
             // 
@@ -582,27 +583,6 @@
             this.availableStagesGrid.Size = new System.Drawing.Size(139, 380);
             this.availableStagesGrid.TabIndex = 45;
             // 
-            // numberOfStages
-            // 
-            this.numberOfStages.AutoSize = true;
-            this.numberOfStages.Location = new System.Drawing.Point(148, 458);
-            this.numberOfStages.Name = "numberOfStages";
-            this.numberOfStages.Size = new System.Drawing.Size(92, 13);
-            this.numberOfStages.TabIndex = 41;
-            this.numberOfStages.Text = "Number of Stages";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.Filter = "Rally|*.srp";
-            this.openFileDialog1.Title = "Open Rally";
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.DefaultExt = "srp";
-            this.saveFileDialog1.FileName = "MyRally";
-            this.saveFileDialog1.Filter = "Rally|*.srp";
-            this.saveFileDialog1.Title = "Save Rally";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.sortByNumber);
@@ -612,17 +592,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(139, 59);
             this.panel1.TabIndex = 46;
-            // 
-            // sortByName
-            // 
-            this.sortByName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sortByName.Location = new System.Drawing.Point(0, 0);
-            this.sortByName.Name = "sortByName";
-            this.sortByName.Size = new System.Drawing.Size(139, 30);
-            this.sortByName.TabIndex = 0;
-            this.sortByName.Text = "Sort by Name";
-            this.sortByName.UseVisualStyleBackColor = true;
-            this.sortByName.Click += new System.EventHandler(this.sortByName_Click);
             // 
             // sortByNumber
             // 
@@ -635,6 +604,17 @@
             this.sortByNumber.UseVisualStyleBackColor = true;
             this.sortByNumber.Click += new System.EventHandler(this.sortByNumber_Click);
             // 
+            // sortByName
+            // 
+            this.sortByName.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sortByName.Location = new System.Drawing.Point(0, 0);
+            this.sortByName.Name = "sortByName";
+            this.sortByName.Size = new System.Drawing.Size(139, 30);
+            this.sortByName.TabIndex = 0;
+            this.sortByName.Text = "Sort by Name";
+            this.sortByName.UseVisualStyleBackColor = true;
+            this.sortByName.Click += new System.EventHandler(this.sortByName_Click);
+            // 
             // moveToChosen
             // 
             this.moveToChosen.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -645,18 +625,30 @@
             this.moveToChosen.Text = "->";
             this.moveToChosen.UseVisualStyleBackColor = true;
             // 
+            // numberOfStages
+            // 
+            this.numberOfStages.AutoSize = true;
+            this.numberOfStages.Location = new System.Drawing.Point(148, 458);
+            this.numberOfStages.Name = "numberOfStages";
+            this.numberOfStages.Size = new System.Drawing.Size(92, 13);
+            this.numberOfStages.TabIndex = 41;
+            this.numberOfStages.Text = "Number of Stages";
+            // 
             // chosenStagesGrid
             // 
             this.chosenStagesGrid.AllowUserToAddRows = false;
             this.chosenStagesGrid.AllowUserToDeleteRows = false;
             this.chosenStagesGrid.AllowUserToResizeRows = false;
+            this.chosenStagesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.chosenStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.chosenStagesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chosenStagesGrid.Location = new System.Drawing.Point(148, 46);
             this.chosenStagesGrid.MultiSelect = false;
             this.chosenStagesGrid.Name = "chosenStagesGrid";
             this.chosenStagesGrid.ReadOnly = true;
+            this.chosenStagesGrid.RowHeadersVisible = false;
             this.tableLayoutPanel1.SetRowSpan(this.chosenStagesGrid, 18);
+            this.chosenStagesGrid.RowTemplate.Height = 15;
             this.chosenStagesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.chosenStagesGrid.Size = new System.Drawing.Size(143, 380);
             this.chosenStagesGrid.TabIndex = 48;
@@ -672,15 +664,15 @@
             this.panel2.Size = new System.Drawing.Size(143, 23);
             this.panel2.TabIndex = 49;
             // 
-            // deleteFromChosen
+            // moveDown
             // 
-            this.deleteFromChosen.Dock = System.Windows.Forms.DockStyle.Left;
-            this.deleteFromChosen.Location = new System.Drawing.Point(0, 0);
-            this.deleteFromChosen.Name = "deleteFromChosen";
-            this.deleteFromChosen.Size = new System.Drawing.Size(34, 23);
-            this.deleteFromChosen.TabIndex = 0;
-            this.deleteFromChosen.Text = "<-";
-            this.deleteFromChosen.UseVisualStyleBackColor = true;
+            this.moveDown.Dock = System.Windows.Forms.DockStyle.Right;
+            this.moveDown.Location = new System.Drawing.Point(109, 0);
+            this.moveDown.Name = "moveDown";
+            this.moveDown.Size = new System.Drawing.Size(34, 23);
+            this.moveDown.TabIndex = 2;
+            this.moveDown.Text = "v";
+            this.moveDown.UseVisualStyleBackColor = true;
             // 
             // moveUp
             // 
@@ -691,15 +683,27 @@
             this.moveUp.Text = "^";
             this.moveUp.UseVisualStyleBackColor = true;
             // 
-            // moveDown
+            // deleteFromChosen
             // 
-            this.moveDown.Dock = System.Windows.Forms.DockStyle.Right;
-            this.moveDown.Location = new System.Drawing.Point(109, 0);
-            this.moveDown.Name = "moveDown";
-            this.moveDown.Size = new System.Drawing.Size(34, 23);
-            this.moveDown.TabIndex = 2;
-            this.moveDown.Text = "v";
-            this.moveDown.UseVisualStyleBackColor = true;
+            this.deleteFromChosen.Dock = System.Windows.Forms.DockStyle.Left;
+            this.deleteFromChosen.Location = new System.Drawing.Point(0, 0);
+            this.deleteFromChosen.Name = "deleteFromChosen";
+            this.deleteFromChosen.Size = new System.Drawing.Size(34, 23);
+            this.deleteFromChosen.TabIndex = 0;
+            this.deleteFromChosen.Text = "<-";
+            this.deleteFromChosen.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "Rally|*.srp";
+            this.openFileDialog1.Title = "Open Rally";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "srp";
+            this.saveFileDialog1.FileName = "MyRally";
+            this.saveFileDialog1.Filter = "Rally|*.srp";
+            this.saveFileDialog1.Title = "Save Rally";
             // 
             // Form1
             // 
