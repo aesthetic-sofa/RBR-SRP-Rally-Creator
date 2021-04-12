@@ -58,6 +58,10 @@ namespace SRP_Rallies_Manager
             // if a file is selected
             if (result == DialogResult.OK)
             {
+                chosenStagesGrid.DataSource = null;
+                chosenStagesGrid.Rows.Clear();
+                chosenStagesGrid.Columns.Clear();
+
                 chosenStages = new List<stage>();
 
                 // Set the selected file URL to the textbox
@@ -72,20 +76,14 @@ namespace SRP_Rallies_Manager
                 numberOfStages.Text = "Number of stages:    " + chosenStages.Count();
 
                 // We only show the stage ID number, among the data in the . 
+                for(int i= 13; i>0; i--)
+                {
+                    chosenStagesGrid.Columns.RemoveAt(i);
+                }
+
+                chosenStagesGrid.Columns.Add(new DataGridViewTextBoxColumn());
                 chosenStagesGrid.Columns[0].HeaderText = "ID";
-                chosenStagesGrid.Columns[1].Visible = false;
-                chosenStagesGrid.Columns[2].Visible = false;
-                chosenStagesGrid.Columns[3].Visible = false;
-                chosenStagesGrid.Columns[4].Visible = false;
-                chosenStagesGrid.Columns[5].Visible = false;
-                chosenStagesGrid.Columns[6].Visible = false;
-                chosenStagesGrid.Columns[7].Visible = false;
-                chosenStagesGrid.Columns[8].Visible = false;
-                chosenStagesGrid.Columns[9].Visible = false;
-                chosenStagesGrid.Columns[10].Visible = false;
-                chosenStagesGrid.Columns[11].Visible = false;
-                chosenStagesGrid.Columns[12].Visible = false;
-                chosenStagesGrid.Columns[13].Visible = false;
+                chosenStagesGrid.Columns[1].HeaderText = "Name";
             }
         }
 
@@ -94,11 +92,12 @@ namespace SRP_Rallies_Manager
             string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
             string folderpath = dir + @"\plugins\TrainingDay\";
             saveFileDialog1.InitialDirectory = folderpath;
+            saveFileDialog1.FileName = "MyRally";
 
             DialogResult saveresult = saveFileDialog1.ShowDialog();
             if (saveresult == DialogResult.OK)
             {
-
+                srp.WriteSRP(chosenStages, chosenStages.Count(), this.saveFileDialog1.FileName);
             }
         }
 
@@ -133,9 +132,24 @@ namespace SRP_Rallies_Manager
 
         private void createNewRally_Click(object sender, EventArgs e)
         {
+            chosenStagesGrid.DataSource = null;
+            chosenStagesGrid.Rows.Clear();
+            chosenStagesGrid.Columns.Clear();
+
             chosenStages = new List<stage>();
+
             chosenStagesGrid.DataSource = chosenStages;
+
             numberOfStages.Text = "Number of stages:    " + chosenStages.Count();
+
+            for (int i = 13; i > 0; i--)
+            {
+                chosenStagesGrid.Columns.RemoveAt(i);
+            }
+
+            chosenStagesGrid.Columns.Add(new DataGridViewTextBoxColumn());
+            chosenStagesGrid.Columns[0].HeaderText = "ID";
+            chosenStagesGrid.Columns[1].HeaderText = "Name";
         }
     }
 }

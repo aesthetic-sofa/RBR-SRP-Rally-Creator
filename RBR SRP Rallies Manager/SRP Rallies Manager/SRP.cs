@@ -534,6 +534,7 @@ namespace SRP_Rallies_Manager
                 }
             }
 
+            stages.RemoveAt(SSnumber);
             return stages;
 
         }
