@@ -569,6 +569,7 @@
             this.availableStagesGrid.AllowUserToAddRows = false;
             this.availableStagesGrid.AllowUserToDeleteRows = false;
             this.availableStagesGrid.AllowUserToResizeRows = false;
+            this.availableStagesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.availableStagesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.availableStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.availableStagesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -639,6 +640,7 @@
             this.chosenStagesGrid.AllowUserToAddRows = false;
             this.chosenStagesGrid.AllowUserToDeleteRows = false;
             this.chosenStagesGrid.AllowUserToResizeRows = false;
+            this.chosenStagesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.chosenStagesGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.chosenStagesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.chosenStagesGrid.Dock = System.Windows.Forms.DockStyle.Fill;

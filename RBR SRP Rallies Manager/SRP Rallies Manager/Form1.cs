@@ -25,6 +25,19 @@ namespace SRP_Rallies_Manager
             InitializeComponent();
         }
 
+        private void AssignNamesToChosenStages()
+        {
+            int rows = chosenStagesGrid.RowCount;
+            for (int i = 0; i<rows; i++)
+            {
+                for (int j = 0; j<availableStagesList.Count; j++)
+                {
+                    if (availableStagesList[j].StageNumber == Int32.Parse(chosenStages[i].Stagenn))
+                        chosenStagesGrid[1,i].Value=availableStagesList[j].StageName;
+                }
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -84,6 +97,9 @@ namespace SRP_Rallies_Manager
                 chosenStagesGrid.Columns.Add(new DataGridViewTextBoxColumn());
                 chosenStagesGrid.Columns[0].HeaderText = "ID";
                 chosenStagesGrid.Columns[1].HeaderText = "Name";
+
+                AssignNamesToChosenStages();
+                availableStagesGrid.AutoResizeColumns();
             }
         }
 
